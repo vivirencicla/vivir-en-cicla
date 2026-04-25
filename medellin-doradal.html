@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Doradal, el corazón de Colombia</title>
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1.2s ease-out;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: black;
+    }
+
+    /* NAV */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      z-index: 10;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: black;
+      font-weight: 600;
+    }
+
+    /* ESPACIO NAV */
+    .spacer {
+      height: 80px;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .hero img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: absolute;
+      bottom: 60px;
+      left: 10%;
+      max-width: 600px;
+      color: white;
+      z-index: 2;
+    }
+
+    .hero-content p {
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .hero-content h1 {
+      font-size: 56px;
+      margin-top: 10px;
+      line-height: 1.1;
+    }
+
+    /* TEXTO */
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .text {
+      font-size: 21px;
+      line-height: 1.9;
+      margin: 100px auto;
+    }
+
+    /* IMÁGENES */
+    .media {
+      margin: 120px auto;
+    }
+
+    .media img {
+      width: 100%;
+      display: block;
+    }
+
+    .media.medium {
+      max-width: 800px;
+    }
+
+    .media.small {
+      max-width: 600px;
+    }
+
+    /* ROW */
+    .row {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      max-width: 1000px;
+      margin: 120px auto;
+      padding: 0 20px;
+    }
+
+    .row img {
+      width: 50%;
+    }
+
+    .row div {
+      font-size: 20px;
+      line-height: 1.8;
+    }
+
+    /* CIERRE */
+    .footer {
+      padding: 120px 20px;
+      text-align: center;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <div class="navbar">
+    <a href="index.html">Vivir en Cicla</a>
+    <a href="bitacoras.html">Bitácoras</a>
+  </div>
+
+  <div class="spacer"></div>
+
+  <!-- HERO -->
+ <section class="media">
+    <img src="Imagenes Doradal/imagen1.jpg">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <p>Bitácora 01 · Vivir en Cicla</p>
+      <h1>Doradal, el corazón de Colombia</h1>
+    </div>
+
+  </section>
+
+  <!-- TEXTO 1 -->
+  <section class="container text fade">
+    <p>
+      En medio de la bruma, las bicicletas comenzaron a reunirse en La Torre Siclas.<br>
+      Ahí, donde durante años hemos tejido ideas, activismo y formas de habitar la ciudad sobre dos ruedas, empezó también esta historia.
+    </p>
+  </section>
+
+  <!-- IMAGEN 1 -->
+ <section class="media fade">
+    <img src="Imagenes Doradal/imagen2.jpg">
+  </section>
+
+  <!-- TEXTO 2 -->
+ <section class="container text fade">
+    <p>
+      Desde el primer ascenso la montaña empezó a hablar.<br>
+      Cada quien a su ritmo, avanzando y esperando a los demás.<br><br>
+
+      Nos fuimos encontrando, como si la ruta nos estuviera esperando.<br><br>
+
+      Andrés y Camila desde el centro, Silvia en la Torre, Mauren, Valentina y Ubeimar en Moravia, Kevin más arriba, Diego en Guarne.
+    </p>
+  </section>
+
+  <!-- ROW -->
+  <section class="row fade">
+    <img src="Imagenes Doradal/imagen3.jpg">
+    <div>
+      La comida y el café se volvieron puntos de encuentro, excusas para detenernos y recordarnos que esto no se trataba de llegar primero, sino de llegar.
+    </div>
+  </section>
+
+  <!-- IMAGEN 2 -->
+  <section class="media fade">
+    <img src="Imagenes Doradal/imagen4.jpg">
+  </section>
+
+  <!-- TEXTO -->
+ <section class="container text fade">
+    <p>
+      Silvi, con sus cuidados, compartía bloqueador y todo tipo de menjurjes hechos por ella.<br><br>
+
+      En la ruta nos encontramos con dos cicloviajeras francesas de unos 60 años. Su forma de viajar nos sorprendió.<br><br>
+
+      Las invitamos a almorzar.
+    </p>
+  </section>
+
+  <!-- IMAGEN -->
+ <section class="media fade">
+    <img src="Imagenes Doradal/imagen5.jpg">
+  </section>
+
+  <!-- TEXTO -->
+ <section class="container text fade">
+    <p>
+      Mientras unos pelaban tomates, otros salían por leche para hacer kéfir.<br>
+      Todo se volvió simple. Y posible.<br><br>
+
+      La bicicleta se volvió parte del paisaje.<br><br>
+
+      Cayendo la noche rodamos entre la neblina. La carretera apenas se dejaba ver.
+    </p>
+  </section>
+
+  <!-- IMAGEN -->
+ <section class="media fade">
+    <img src="Imagenes Doradal/imagen6.jpg">
+  </section>
+
+  <!-- TEXTO -->
+  <section class="container text fade">
+    <p>
+  El río empezó a escucharse antes de que lo viéramos.<br>
+  Ahí encontramos dónde pasar la noche.<br>
+  Don Julio no nos estaba esperando.<br>
+  Dijo— Pero aquí siempre hay lugar.<br>
+  Hizo preguntas. Muchas. <br>
+  Mientras hablábamos, su hija freía tajadas en la cocina. <br>
+  La casa era suya. <br>
+  Y a veces, también, de quienes pasaban. <br>
+    </p>
+  </section>
+
+  <!-- IMAGEN -->
+ <section class="media fade">
+    <img src="Imagenes Doradal/imagen7.jpg">
+  </section>
+
+  <!-- TEXTO -->
+  <section class="container text fade">
+    <p>
+      Al día siguiente, el aire cambió.<br><br>
+      El Magdalena Medio ya se sentía en la piel.<br>
+      Nos quitamos capas de ropa intentando negociar con el calor.<br>
+    </p>
+  </section>
+
+  <!-- IMAGEN -->
+  <section class="media fade">
+    <img src="Imagenes Doradal/imagen8.png">
+  </section>
+
+  <!-- TEXTO -->
+ <section class="container text fade">
+    <p>
+      Pedaleamos, paramos, y seguimos. <br><br>
+      Encontramos otro río. <br><br>
+      Bajamos a soltar el peso y a enfriar el cuerpo.<br>
+      A sentir.<br><br>
+      Ahí estaba Don Gustavo, con su hija, cuidando ese lugar como guardianes de un templo.<br><br>
+      Cocinaron para nosotros fríjoles con chicharrón.<br>
+    </p>
+  </section>
+
+  <!-- IMAGEN -->
+  <section class="media fade">
+    <img src="Imagenes Doradal/imagen9.png">
+  </section>
+
+  <!-- TEXTO -->
+  <section class="container text fade">
+    <p>
+      Más adelante, Ube decidió bajarse de la bicicleta.<br>
+      Escuchó su cuerpo.<br><br>
+
+      Y eso también es pedalear.
+    </p>
+  </section>
+
+  <!-- IMAGEN -->
+  <section class="media fade">
+    <img src="Imagenes Doradal/imagen10.jpg">
+  </section>
+
+  <!-- TEXTO FINAL -->
+  <section class="container text fade">
+    <p>
+      El Alto del Pollo nos encontró sin mucho más que dar.<br><br>
+
+     Pero la moral seguía intacta.<br><br><br>
+     El barrio nos recibió con aplausos y arroz con pollo.<br>
+     Habíamos llegado.No era solo un destino.<br><br>
+     Era el origen de nuestra querida Mauren.<br><br>
+     Aquí entendemos de dónde viene lo que ella es.<br>
+     La forma de cuidar.<br>
+     De estar.<br>
+     De amar sin medida.<br><br>
+    </p>
+  </section>
+
+  <!-- IMAGEN -->
+  <section class="media fade">
+    <img src="Imagenes Doradal/imagen11.png">
+  </section>
+<section class="container text fade">
+    <p>
+      Nos perdimos por los caminos de Doradal.<br>
+      Sin prisa.<br>
+      Ahora somos un poco de este lugar.<br>
+      Nos llevamos el calor, el río, los rostros, las manos que nos cocinaron.<br><br>
+      Por eso pedaleamos. <br>
+      Porque en el camino vamos guardando pedazos del mundo dentro del cuerpo. <br>
+      Y un día, sin darnos cuenta,<br>
+      también nosotros nos volvemos territorio.<br><br>
+
+    </p>
+  </section>
+
+  <!-- CIERRE -->
+  <section class="footer">
+    <p>Una bitácora de Vivir en Cicla</p>
+    <p>Fotografías: Andrés Usuga</p>
+    <p>Narración: María Camila Castellanos</p>
+  </section>
+
+</body>
+<script>
+const elements = document.querySelectorAll('.fade');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, {
+  threshold: 0.15
+});
+
+elements.forEach(el => observer.observe(el));
+</script>
+</html>
