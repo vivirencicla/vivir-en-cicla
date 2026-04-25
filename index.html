@@ -5,9 +5,8 @@
   <meta charset="UTF-8">
   <title>Vivir en Cicla</title>
 
-  <style id="responsive_fix">
+  <style>
 
-/* BASE GLOBAL (IMPORTANTE) */
 html {
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
@@ -16,25 +15,18 @@ html {
 body {
   margin: 0;
   overflow-x: hidden;
-  font-size: 1.125rem; /* 18px */
+  font-size: 1.125rem;
   line-height: 1.7;
   font-family: Arial, sans-serif;
 }
 
-/*  ICONOS */
+/* ICONOS */
 .icon {
   opacity: 0.8;
   transition: 0.25s ease;
-  filter: drop-shadow(0 0 2px rgba(255,255,255,0.35));
 }
 
-.icon:hover {
-  opacity: 1;
-  transform: scale(1.08);
-  filter: drop-shadow(0 0 4px rgba(255,255,255,0.6));
-}
-
-/* 🎬 BOTÓN HERO */
+/* HERO BUTTON */
 .hero-button {
   position: absolute;
   left: 50%;
@@ -45,56 +37,39 @@ body {
   color: white;
   text-decoration: none;
   font-size: 0.9rem;
-  letter-spacing: 1px;
-  opacity: 0;
-  animation: fadeInButton 1.2s ease forwards;
-  animation-delay: 1.5s;
-  background: rgba(0,0,0,0.15);
-  backdrop-filter: blur(4px);
+  background: rgba(0,0,0,0.2);
 }
 
-@keyframes fadeInButton {
-  to { opacity: 1; }
+/* 🔥 HERO TITLES RESPONSIVE */
+h1 {
+  font-size: clamp(42px, 10vw, 88px);
+  letter-spacing: -1px;
+  line-height: 1.05;
 }
 
-.hero-button:hover {
-  background: white;
-  color: black;
-  transition: 0.3s ease;
-}
-
-/* 📱 RESPONSIVE REAL (CLAVE) */
+/* 📱 MOBILE FIX REAL */
 @media (max-width: 768px) {
 
   html {
-    font-size: 18px; /* escala base más grande */
+    font-size: 18px;
   }
 
   body {
     font-size: 1.2rem;
-    line-height: 1.8;
   }
 
   h1 {
-    font-size: 2.2rem;
-  }
-
-  h2 {
-    font-size: 1.6rem;
+    font-size: 3rem !important;
+    line-height: 1.1;
   }
 
   p {
-    font-size: 1.1rem;
+    font-size: 1.1rem !important;
   }
 
-  /* HEADER MÁS LEGIBLE EN MÓVIL */
-  a {
-    font-size: 1rem !important;
-  }
-
-  /* AJUSTE DE ESPACIADO GENERAL */
-  div {
-    word-wrap: break-word;
+  /* HERO FIX */
+  .hero-content {
+    padding: 0 20px 60px 20px !important;
   }
 }
 
@@ -211,20 +186,15 @@ body {
   justify-content:flex-end;
   align-items:flex-start;
 
-  padding:0 10% 80px 10%;
+  padding: 0 20px 60px 20px;
   color:white;
 ">
 
     <div style="max-width:500px;">
 
-      <h1 style="
-        font-size:88px;
-        letter-spacing:-2px;
-        line-height:1.1;
-        margin:0;
-      ">
-        RUMBO<br>AL SUR
-      </h1>
+      <h1>
+  RUMBO<br>AL SUR
+</h1>
 
       <p style="
         font-size:20px;
