@@ -5,75 +5,99 @@
   <meta charset="UTF-8">
   <title>Vivir en Cicla</title>
 
-  <style>
-    body {
-  font-size: 18px;
-  line-height: 1.6;
+  <style id="responsive_fix">
+
+/* BASE GLOBAL (IMPORTANTE) */
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
 }
 
-@media (max-width: 768px) {
-  body {
-    font-size: 20px;
-  }
-
-  h1 {
-    font-size: 32px;
-  }
-
-  h2 {
-    font-size: 26px;
-  }
-
-  p {
-    font-size: 18px;
-  }
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.7;
+  font-family: Arial, sans-serif;
 }
-    .icon{
-      opacity:0.8;
-      transition:0.25s ease;
-      filter: drop-shadow(0 0 2px rgba(255,255,255,0.35));
-    }
 
-    .icon:hover{
-      opacity:1;
-      transform:scale(1.08);
-      filter: drop-shadow(0 0 4px rgba(255,255,255,0.6));
-    }
-  </style>
-<style>
-.hero-button{
-  position:absolute;
-  left:50%;
-  top:50%;
-  transform:translate(-50%, -50%);
+/*  ICONOS */
+.icon {
+  opacity: 0.8;
+  transition: 0.25s ease;
+  filter: drop-shadow(0 0 2px rgba(255,255,255,0.35));
+}
 
-  padding:12px 22px;
-  border:1px solid white;
+.icon:hover {
+  opacity: 1;
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 4px rgba(255,255,255,0.6));
+}
 
-  color:white;
-  text-decoration:none;
-  font-size:14px;
-  letter-spacing:1px;
-
-  opacity:0;
+/* 🎬 BOTÓN HERO */
+.hero-button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 12px 22px;
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  opacity: 0;
   animation: fadeInButton 1.2s ease forwards;
-  animation-delay:1.5s;
-
+  animation-delay: 1.5s;
   background: rgba(0,0,0,0.15);
   backdrop-filter: blur(4px);
 }
 
-@keyframes fadeInButton{
-  to{
-    opacity:1;
+@keyframes fadeInButton {
+  to { opacity: 1; }
+}
+
+.hero-button:hover {
+  background: white;
+  color: black;
+  transition: 0.3s ease;
+}
+
+/* 📱 RESPONSIVE REAL (CLAVE) */
+@media (max-width: 768px) {
+
+  html {
+    font-size: 18px; /* escala base más grande */
+  }
+
+  body {
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  /* HEADER MÁS LEGIBLE EN MÓVIL */
+  a {
+    font-size: 1rem !important;
+  }
+
+  /* AJUSTE DE ESPACIADO GENERAL */
+  div {
+    word-wrap: break-word;
   }
 }
 
-.hero-button:hover{
-  background:white;
-  color:black;
-  transition:0.3s ease;
-}
 </style>
 </head>
 
