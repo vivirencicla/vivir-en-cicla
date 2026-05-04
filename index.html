@@ -1,327 +1,271 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="UTF-8">
-  <title>Vivir en Cicla</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vivir en Cicla</title>
 
-  <style>
+<style>
 
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BASE */
 html {
-  font-size: 16px;
+  font-size: 18px;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
-  margin: 0;
-  overflow-x: hidden;
-  font-size: 1.125rem;
-  line-height: 1.7;
   font-family: Arial, sans-serif;
+  line-height: 1.7;
+  color: #111;
+  overflow-x: hidden;
 }
 
-/* ICONOS */
-.icon {
-  opacity: 0.8;
-  transition: 0.25s ease;
+/* TIPOGRAFÍA */
+h1 {
+  font-size: clamp(48px, 10vw, 96px);
+  line-height: 1.05;
 }
 
-/* HERO BUTTON */
+h2 {
+  font-size: clamp(26px, 4vw, 40px);
+}
+
+p {
+  font-size: 1.1rem;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(8px);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left,
+.header-right {
+  display: flex;
+  gap: 16px;
+  font-size: 0.95rem;
+}
+
+.header-logo {
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  position: relative;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('hero.jpg') center/cover no-repeat;
+  filter: brightness(45%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 20px 60px;
+  color: white;
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
 .hero-button {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  padding: 12px 22px;
+  padding: 14px 26px;
   border: 1px solid white;
-  color: white;
-  text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 1rem;
   background: rgba(0,0,0,0.2);
 }
 
-/* 🔥 HERO TITLES RESPONSIVE */
-h1 {
-  font-size: clamp(42px, 10vw, 88px);
-  letter-spacing: -1px;
-  line-height: 1.05;
+/* SECCIÓN */
+.section {
+  background: white;
+  padding: 100px 0;
 }
 
-/* 📱 MOBILE FIX REAL */
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* TARJETAS */
+.card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 80px;
+  text-decoration: none;
+  color: black;
+}
+
+.card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.card-image,
+.card-text {
+  width: 50%;
+}
+
+.card-text {
+  padding: 0 40px;
+}
+
+/* 📱 MOBILE */
 @media (max-width: 768px) {
 
   html {
-    font-size: 18px;
+    font-size: 20px;
   }
 
-  body {
-    font-size: 1.2rem;
+  .card {
+    flex-direction: column;
   }
 
-  h1 {
-    font-size: 3rem !important;
-    line-height: 1.1;
+  .card-image,
+  .card-text {
+    width: 100%;
   }
 
-  p {
-    font-size: 1.1rem !important;
+  .card-text {
+    padding: 20px;
   }
 
-  /* HERO FIX */
   .hero-content {
-    padding: 0 20px 60px 20px !important;
+    padding-bottom: 80px;
   }
+
 }
 
 </style>
 </head>
 
-<body style="margin:0; overflow-x:hidden;">
+<body>
 
-<!-- HEADER ESTABLE -->
-<div style="
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:9999;
-  font-family: Arial, sans-serif;
-  background: rgba(0,0,0,0.25);
-  backdrop-filter: blur(8px);
-">
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
 
-  <div style="
-    max-width:1200px;
-    margin:0 auto;
-    padding:18px 20px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-  ">
-
-    <!-- IZQUIERDA -->
-    <div style="display:flex; gap:16px; font-size:14px;">
-      <a href="bitacoras.html" style="color:white; text-decoration:none;">Bitácora</a>
-      <a href="arte.html" style="color:white; text-decoration:none;">Arte</a>
+    <div class="header-left">
+      <a href="bitacoras.html">Bitácora</a>
+      <a href="arte.html">Arte</a>
     </div>
 
-    <!-- CENTRO -->
-    <a href="index.html" style="
-      color:white;
-      text-decoration:none;
-      font-weight:600;
-      letter-spacing:2px;
-      font-size:16px;
-    ">
+    <a href="index.html" class="header-logo">
       Vivir en Cicla
     </a>
 
-    <!-- DERECHA -->
-    <div style="
-      display:flex;
-      gap:14px;
-      align-items:center;
-      font-size:13px;
-    ">
-
-      <!-- YOUTUBE (ICONO ORIGINAL SIMPLE) -->
-      <a href="https://www.youtube.com/@vivirencicla" target="_blank" style="display:flex;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
-          <rect x="3" y="5" width="18" height="14" rx="3"/>
-          <path d="M10 9L15 12L10 15Z" fill="black"/>
-        </svg>
-      </a>
-
-      <!-- INSTAGRAM (ICONO ORIGINAL SIMPLE) -->
-      <a href="https://www.instagram.com/vivirencicla/" target="_blank" style="display:flex;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-          <rect x="4" y="4" width="16" height="16" rx="5"/>
-          <circle cx="12" cy="12" r="4"/>
-          <circle cx="17.5" cy="6.5" r="1" fill="white"/>
-        </svg>
-      </a>
-
-      <!-- PATREON (P SIMPLE LEGIBLE) -->
-      <a href="https://www.patreon.com/c/VivirenCicla03?vanity=user" target="_blank" style="
-        color:white;
-        text-decoration:none;
-        font-weight:600;
-        font-size:14px;
-      ">
-        P
-      </a>
-
-      <!-- VAKI (TEXTO LIMPIO) -->
-      <a href="https://vaki.co/vaki/cada-pedalazo-cuenta" target="_blank" style="
-        color:white;
-        text-decoration:none;
-        font-size:13px;
-        letter-spacing:0.5px;
-      ">
-        Vaki
-      </a>
-
+    <div class="header-right">
+      <a href="https://www.youtube.com/@vivirencicla" target="_blank">YouTube</a>
+      <a href="https://www.instagram.com/vivirencicla/" target="_blank">Instagram</a>
+      <a href="https://www.patreon.com/c/VivirenCicla03?vanity=user" target="_blank">P</a>
+      <a href="https://vaki.co/vaki/cada-pedalazo-cuenta" target="_blank">Vaki</a>
     </div>
 
   </div>
-</div>
+</header>
 
 <!-- HERO -->
-<section style="height:100vh; position:relative;">
+<section class="hero">
 
-  <div style="
-    background:url('hero.jpg') center/cover no-repeat;
-    position:absolute;
-    top:0; left:0; right:0; bottom:0;
-    filter:brightness(45%);
-  "></div>
+  <div class="hero-bg"></div>
 
-  <div style="
-  position:relative;
-  z-index:2;
-  height:100%;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  align-items:flex-start;
-
-  padding: 0 20px 60px 20px;
-  color:white;
-">
-
-    <div style="max-width:500px;">
-
-      <h1>
-  RUMBO<br>AL SUR
-</h1>
-
-      <p style="
-        font-size:20px;
-        margin-top:20px;
-        opacity:0.9;
-      ">
-        Pedaleando Latinoamérica
-      <a href="viaje.html" class="hero-button">
-  Venir al viaje
-</a>
-      </p>
-
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>RUMBO<br>AL SUR</h1>
+      <p>Pedaleando Latinoamérica</p>
     </div>
-
   </div>
+
+  <a href="viaje.html" class="hero-button">Venir al viaje</a>
 
 </section>
-<!-- SECCIÓN BITÁCORA -->
-<section style="
-  background:white;
-  padding:100px 0;
-  font-family: Arial, sans-serif;
-">
 
-  <!-- CONTENEDOR -->
-  <div style="max-width:1200px; margin:0 auto;">
+<!-- BITÁCORA -->
+<section class="section">
+  <div class="container">
 
-    <!-- 1 DORADAL -->
-    <a href="medellin-doradal.html" style="
-      display:flex;
-      text-decoration:none;
-      color:black;
-      margin-bottom:80px;
-      align-items:center;
-    ">
-
-      <!-- IMAGEN -->
-      <div style="width:50%;">
-        <img src="Imagenes Doradal/doradal.jpg" style="width:100%; height:400px; object-fit:cover;">
+    <a href="medellin-doradal.html" class="card">
+      <div class="card-image">
+        <img src="Imagenes Doradal/doradal.jpg">
       </div>
-
-      <!-- TEXTO -->
-      <div style="width:50%; padding:0 40px;">
-        <h2 style="font-size:32px; margin:0;">
-          Doradal
-        </h2>
-        <p style="margin-top:15px; font-size:16px; line-height:1.6;">
-          Un recorrido entre comunidad, carretera y territorio. La bicicleta como forma del paisaje.
-        </p>
+      <div class="card-text">
+        <h2>Doradal</h2>
+        <p>Un recorrido entre comunidad, carretera y territorio. La bicicleta como forma del paisaje.</p>
       </div>
-
     </a>
 
-    <!-- 2 CISNEROS -->
-    <a href="cisneros.html" style="
-      display:flex;
-      text-decoration:none;
-      color:black;
-      margin-bottom:80px;
-      align-items:center;
-    ">
-
-      <div style="width:50%;">
-        <img src="Imagenes Doradal/cisneros.jpg" style="width:100%; height:400px; object-fit:cover;">
+    <a href="cisneros.html" class="card">
+      <div class="card-image">
+        <img src="Imagenes Doradal/cisneros.jpg">
       </div>
-
-      <div style="width:50%; padding:0 40px;">
-        <h2 style="font-size:32px; margin:0;">
-          Cisneros, ferrocarril y biela
-        </h2>
-        <p style="margin-top:15px; font-size:16px; line-height:1.6;">
-          El encuentro entre la memoria del tren y el movimiento del pedaleo.
-        </p>
+      <div class="card-text">
+        <h2>Cisneros, ferrocarril y biela</h2>
+        <p>El encuentro entre la memoria del tren y el movimiento del pedaleo.</p>
       </div>
-
     </a>
 
-    <!-- 3 LINÓLEO -->
-    <a href="linoleo.html" style="
-      display:flex;
-      text-decoration:none;
-      color:black;
-      margin-bottom:80px;
-      align-items:center;
-    ">
-
-      <div style="width:50%;">
-        <img src="Imagenes Doradal/volar.jpg" style="width:100%; height:400px; object-fit:cover;">
+    <a href="linoleo.html" class="card">
+      <div class="card-image">
+        <img src="Imagenes Doradal/volar.jpg">
       </div>
-
-      <div style="width:50%; padding:0 40px;">
-        <h2 style="font-size:32px; margin:0;">
-          Descubriendo el linóleo, raíces
-        </h2>
-        <p style="margin-top:15px; font-size:16px; line-height:1.6;">
-          El cuerpo como matriz de impresión. La huella como territorio.
-        </p>
+      <div class="card-text">
+        <h2>Descubriendo el linóleo, raíces</h2>
+        <p>El cuerpo como matriz de impresión. La huella como territorio.</p>
       </div>
-
     </a>
 
-    <!-- 4 TRITÓN -->
-    <a href="triton.html" style="
-      display:flex;
-      text-decoration:none;
-      color:black;
-      margin-bottom:80px;
-      align-items:center;
-    ">
-
-      <div style="width:50%;">
-        <img src="Imagenes Doradal/caliche.jpg" style="width:100%; height:400px; object-fit:cover;">
+    <a href="triton.html" class="card">
+      <div class="card-image">
+        <img src="Imagenes Doradal/caliche.jpg">
       </div>
-
-      <div style="width:50%; padding:0 40px;">
-        <h2 style="font-size:32px; margin:0;">
-          El Tritón, Gran cañón del Chicamocha
-        </h2>
-        <p style="margin-top:15px; font-size:16px; line-height:1.6;">
-          Un viaje hacia la profundidad del cañón más grande de Colombia.
-        </p>
+      <div class="card-text">
+        <h2>El Tritón, Gran cañón del Chicamocha</h2>
+        <p>Un viaje hacia la profundidad del cañón más grande de Colombia.</p>
       </div>
-
     </a>
 
   </div>
-
 </section>
 
 </body>
