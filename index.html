@@ -155,11 +155,6 @@ body {
 }
 @media (max-width: 768px) {
 
-  .header-inner {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
 
   .header-logo {
     position: static;
@@ -168,12 +163,43 @@ body {
     margin-bottom: 5px;
   }
 
-  .header-left,
-  .header-right {
+}
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: rgba(0,0,0,0.9);
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .nav-menu.active {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
   }
 }
 </style>
@@ -183,25 +209,31 @@ body {
 
 <!-- HEADER -->
 <header class="header">
+
   <div class="header-inner">
 
-    <div class="header-left">
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <a href="index.html" class="header-logo">Vivir en Cicla</a>
+
+    <div class="nav-menu" id="navMenu">
       <a href="bitacoras.html">Bitácora</a>
       <a href="arte.html">Arte</a>
-    </div>
-
-    <a href="index.html" class="header-logo">
-      Vivir en Cicla
-    </a>
-
-    <div class="header-right">
       <a href="https://www.youtube.com/@vivirencicla" target="_blank">YouTube</a>
       <a href="https://www.instagram.com/vivirencicla/" target="_blank">Instagram</a>
-      <a href="https://www.patreon.com/c/VivirenCicla03?vanity=user" target="_blank">P</a>
       <a href="https://vaki.co/vaki/cada-pedalazo-cuenta" target="_blank">Vaki</a>
     </div>
 
   </div>
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+<div class="nav-menu" id="navMenu">
+  <a href="bitacoras.html">Bitácora</a>
+  <a href="arte.html">Arte</a>
+  <a href="https://www.youtube.com/@vivirencicla" target="_blank">YouTube</a>
+  <a href="https://www.instagram.com/vivirencicla/" target="_blank">Instagram</a>
+  <a href="https://vaki.co/vaki/cada-pedalazo-cuenta" target="_blank">Vaki</a>
+</div>
 </header>
 
 <!-- HERO -->
@@ -264,6 +296,10 @@ body {
 
   </div>
 </section>
-
+<script>
+function toggleMenu() {
+  document.getElementById("navMenu").classList.toggle("active");
+}
+</script>
 </body>
 </html>
