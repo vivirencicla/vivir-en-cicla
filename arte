@@ -246,7 +246,7 @@ body {
       <h1>RUMBO<br>AL SUR</h1>
       <p>Pedaleando Latinoamérica</p>
 
-      <a href="comunidad.html" class="hero-button">Venir al viaje</a>
+      <a href="viaje.html" class="hero-button">Venir al viaje</a>
     </div>
   </div>
 </section>
@@ -275,7 +275,7 @@ body {
       </div>
     </a>
 
-    <a href="arte.html" class="card">
+    <a href="linoleo.html" class="card">
       <div class="card-image">
         <img src="Imagenes Doradal/volar.jpg">
       </div>
