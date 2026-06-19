@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vivir en Cicla</title>
+<title>Comunidad | Vivir en Cicla</title>
 
 <style>
 
@@ -14,17 +14,12 @@
   box-sizing: border-box;
 }
 
-html {
-  font-size: 18px;
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: Arial, sans-serif;
   background: #0b0b0b;
-  color: white;
+  color: #f2f2f2;
+  line-height: 1.5;
 }
-
 /* HEADER */
 .header {
   position: fixed;
@@ -50,111 +45,108 @@ body {
   color: white;
   text-decoration: none;
 }
-
 /* HERO */
 .hero {
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  text-align: center;
-  overflow: hidden;
+  min-height: 600px;
 }
-
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background: 
-    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)),
-    url('hero.jpg') center/cover no-repeat;
-  opacity: 1;
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(50%);
 }
 
 .hero-content {
-  position: relative;
-  z-index: 2;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
-
-.hero-text h1 {
-  font-size: 3rem;
-  letter-spacing: 3px;
+.hero-content h1 {
+  font-size: 2.5rem;
+  text-align: center;
 }
-
-.hero-text p {
-  margin-top: 10px;
-  opacity: 0.8;
+.hero-content p {
+  max-width: 700px;
+  text-align: center;
+  font-size: 1.2rem;
 }
-
-/* BOTÓN PRO */
-.hero-button {
-  margin-top: 30px;
-  display: inline-block;
-  padding: 14px 26px;
-  color: black;
-  background: white;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.hero-button:hover {
-  transform: translateY(-3px);
-  background: #eaeaea;
-}
-
-/* SECCIÓN BITÁCORA */
+/* SECCIONES */
 .section {
   padding: 80px 20px;
-  background: #0b0b0b;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
   max-width: 1100px;
   margin: auto;
 }
 
-/* CARDS */
+/* RED VIVA */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
 .card {
-  display: block;
-  text-decoration: none;
-  color: white;
   background: #151515;
+  padding: 20px;
   border-radius: 12px;
-  overflow: hidden;
-  transition: 0.3s;
+  border: 1px solid #222;
 }
 
-.card:hover {
-  transform: translateY(-5px);
+.card h3 {
+  margin-bottom: 5px;
 }
 
-.card-image img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block;
-}
-
-.card-text {
-  padding: 15px;
-}
-
-.card-text h2 {
-  font-size: 1.1rem;
-  margin-bottom: 8px;
-}
-
-.card-text p {
+.card p {
   font-size: 0.9rem;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
-/* FUNCIÓN CELULARES */
+/* HISTORIAS */
+.story {
+  margin: 120px 0;
+}
+
+.story img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.story p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: auto;
+  opacity: 0.95;
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  padding: 100px 20px;
+  background: #111;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.cta button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  border: none;
+  background: white;
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+}
+/* función celulares*/
 .menu-icon {
   display: none;
   font-size: 1.8rem;
@@ -171,8 +163,16 @@ body {
   color: white;
   text-decoration: none;
 }
-
 @media (max-width: 768px) {
+
+  .hero {
+    height: 85vh;
+    min-height: 500px;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
 
   .menu-icon {
     display: block;
@@ -194,12 +194,64 @@ body {
   }
 }
 
+.cta {
+  padding: 140px 20px;
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.cta h2 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+
+.cta p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.8;
+  margin-bottom: 50px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  padding: 16px 34px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+/* Patreon */
+.cta-button.primary {
+  background: #ff424d;
+  color: white;
+}
+
+/* Vaki */
+.cta-button.secondary {
+  background: #2e7d32;
+  color: white;
+}
+
+
+.cta-button.secondary:hover {
+  background: white;
+  color: black;
+  transform: translateY(-3px);
+}
+/* FOOTER */
 .footer {
   background: #050505;
   padding: 100px 30px 40px;
   border-top: 1px solid rgba(255,255,255,0.08);
 }
-
 .footer-grid {
   max-width: 1200px;
   margin: auto;
@@ -313,66 +365,77 @@ body {
 </head>
 
 <body>
-<div id="header-container"></div>
+  <div id="header-container"></div>
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
+  <img src="imagenes comunidad/comunidad.jpg" alt="Comunidad Vivir en Cicla">
 
   <div class="hero-content">
-    <div class="hero-text">
-      <h1>RUMBO<br>AL SUR</h1>
-      <p>Pedaleando Latinoamérica</p>
-
-      <a href="comunidad.html" class="hero-button">Venir al viaje</a>
-    </div>
+    <h1>Comunidad</h1>
+    <p>Detrás de cada viaje hay una comunidad que nos acompaña</p>
   </div>
 </section>
 
-<!-- BITÁCORA -->
+<section class="cta">
+  <h2>¿Quieres ser parte del camino?</h2>
+
+  <p>
+    Cada aporte nos ayuda a seguir pedaleando, documentando historias y construyendo comunidad a través del territorio.
+  </p>
+
+  <div class="cta-buttons">
+
+    <a href="https://www.patreon.com/c/vivirencicla03/membership" target="_blank" class="cta-button primary">
+      Apoyar en Patreon
+    </a>
+
+    <a href="https://vaki.co/vaki/cada-pedalazo-cuenta" target="_blank" class="cta-button secondary">
+      Apoyar en Vaki
+    </a>
+
+  </div>
+</section>
+<!-- RED VIVA -->
 <section class="section">
-  <div class="container">
+  <h2>Red viva</h2>
+  <div class="grid">
 
-    <a href="medellin-doradal.html" class="card">
-      <div class="card-image">
-        <img src="Imagenes Doradal/doradal.jpg">
-      </div>
-      <div class="card-text">
-        <h2>Doradal, El Corazón de Colombia</h2>
-        <p>Un recorrido entre comunidad y territorio. La bicicleta como forma del paisaje.</p>
-      </div>
-    </a>
+    <div class="card">
+      <h3>Gustavo</h3>
+      <p>Cocorná · Nos recibió en su casa</p>
+    </div>
 
-    <a href="cisneros.html" class="card">
-      <div class="card-image">
-        <img src="Imagenes Doradal/cisneros.jpg">
-      </div>
-      <div class="card-text">
-        <h2>Cisneros, Pedaleando por el Ferricarril de Antioquia </h2>
-        <p>Através de la memoria del ferrocarril y los túneles de Antioquia.</p>
-      </div>
-    </a>
- <a href="cronicas.html" class="card">
-      <div class="card-image">
-        <img src="Imagenes Doradal/santander.jpg">
-      </div>
-      <div class="card-text">
-        <h2>El Tritón, Gran cañón del Chicamocha</h2>
-        <p>Un viaje hacia la profundidad del cañón más grande de Colombia.</p>
-      </div>
-    </a>
-    <a href="arte.html" class="card">
-      <div class="card-image">
-        <img src="Imagenes Doradal/nieve.jpg">
-      </div>
-      <div class="card-text">
-        <h2>Arte</h2>
-        <p>Explorando el linoleo y la serigrafía.</p>
-      </div>
-    </a>
+    <div class="card">
+      <h3>Ciclaramanga</h3>
+      <p>Bucaramanga · Prestaron bicicicletas para movilizarnos en la ciudad</p>
+    </div>
+
+    <div class="card">
+      <h3>Carmen</h3>
+      <p>Piedecuesta · Nos recibió en su casa</p>
+    </div>
+
   </div>
 </section>
 
-<!-- FOOTER  -->
+<!-- HISTORIA 1 -->
+<section class="section story">
+  <img src="imagenes comunidad/transporte.jpg" alt="">
+  <p>
+    Hay lugares donde el viaje se detiene, no porque termine,
+    sino porque alguien te recuerda que también puedes quedarte.
+  </p>
+</section>
+
+<!-- HISTORIA 2 -->
+<section class="section story">
+  <img src="imagenes comunidad/limonada.jpg" alt="">
+  <p>
+    La comunidad no es un lugar. Es una acumulación de gestos pequeños
+    que sostienen algo más grande que nosotros.
+  </p>
+</section>
+  <!-- FOOTER  -->
 
 <footer class="footer">
 
@@ -428,6 +491,7 @@ body {
   </div>
 
 </footer>
+
 <script src="header.js"></script>
 <script>
 function toggleMenu() {

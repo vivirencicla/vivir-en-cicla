@@ -1,50 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Doradal, el corazón de Colombia</title>
-.fade {
+  <style>
+    html, body {
+  overflow-x: hidden;
+}
+    .fade {
   opacity: 0;
   transform: translateY(40px);
   transition: all 1.2s ease-out;
 }
-
 .fade.show {
   opacity: 1;
   transform: translateY(0);
 }
-  <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       color: black;
     }
-
-    /* NAV */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 20px 10%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: white;
-      z-index: 10;
-    }
-
-    .navbar a {
-      text-decoration: none;
-      color: black;
-      font-weight: 600;
-    }
-
-    /* ESPACIO NAV */
-    .spacer {
-      height: 80px;
-    }
-
     /* HERO */
     .hero {
       position: relative;
@@ -103,9 +80,8 @@
 
     /* IMÁGENES */
     .media {
-      margin: 120px auto;
-    }
-
+  margin: 0;
+}
     .media img {
       width: 100%;
       display: block;
@@ -144,27 +120,252 @@
       text-align: center;
       font-size: 16px;
     }
+    .creditos {
+      padding: 80px 20px 40px;
+      text-align: center;
+      font-size: 16px;
+      color: #333;
+    }
+    .creditos p {
+      margin: 4px 0;
+    }
+ /* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  z-index: 999;
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+   padding: 18px 20px;
+}
+.header-logo {
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: white;
+  text-decoration: none;
+}
+.header a {
+  color: white !important;
+  text-decoration: none !important;
+}
+/* FUNCIÓN CELULARES */
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+}
+.nav-menu {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-menu a {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+     left: auto;
+     max-width: calc(100vw - 20px);
+    background: rgba(0,0,0,0.9);
+    padding: 15px;
+    border-radius: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .nav-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  /* HERO en móvil */
+  .hero-content {
+    left: 5%;
+    right: 5%;
+    bottom: 40px;
+    max-width: none;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .hero-content p {
+    font-size: 13px;
+  }
+
+  /* ROW en móvil: apilar imagen y texto */
+  .row {
+    flex-direction: column;
+    gap: 20px;
+    margin: 60px auto;
+  }
+
+  .row img {
+    width: 100%;
+  }
+
+  /* TEXTO en móvil */
+  .text {
+    font-size: 18px;
+    margin: 60px auto;
+  }
+}
+/* FOOTER */
+.footer {
+  background: #050505;
+  padding: 100px 30px 40px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  color: white;
+}
+.footer-grid {
+  max-width: 1200px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 60px;
+}
+
+.footer h3 {
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.footer h4 {
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.footer p {
+  opacity: 0.7;
+  line-height: 1.7;
+}
+
+.footer a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  opacity: 0.7;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  opacity: 1;
+}
+
+.footer-newsletter form {
+  margin-top: 20px;
+}
+
+.footer-newsletter input {
+  width: 100%;
+  padding: 14px;
+  background: #111;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.footer-newsletter button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  background: white;
+  color: black;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 80px;
+  opacity: 0.5;
+  font-size: 0.9rem;
+}
+@media (max-width: 768px) {
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    text-align: left;
+  }
+
+  .footer {
+    padding: 50px 20px;
+  }
+
+  .footer-brand h3 {
+    font-size: 20px;
+  }
+
+  .footer-nav a,
+  .footer-social a {
+    display: block;
+    margin: 6px 0;
+    font-size: 14px;
+  }
+
+  .footer-newsletter input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .footer-newsletter button {
+    width: 100%;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 30px;
+  }
+html, body {
+  overflow-x: hidden;
+}
+
   </style>
 </head>
 
 <body>
-
-  <!-- NAV -->
-  <div class="navbar">
-    <a href="index.html">Vivir en Cicla</a>
-    <a href="bitacoras.html">Bitácoras</a>
-  </div>
-
-  <div class="spacer"></div>
-
+    <div id="header-container"></div>
   <!-- HERO -->
- <section class="media">
+  <section class="hero">
     <img src="Imagenes Doradal/imagen1.jpg">
-
     <div class="hero-overlay"></div>
-
     <div class="hero-content">
-      <p>Bitácora 01 · Vivir en Cicla</p>
+      <p>Crónica 01 · Vivir en Cicla</p>
       <h1>Doradal, el corazón de Colombia</h1>
     </div>
 
@@ -174,7 +375,7 @@
   <section class="container text fade">
     <p>
       En medio de la bruma, las bicicletas comenzaron a reunirse en La Torre Siclas.<br>
-      Ahí, donde durante años hemos tejido ideas, activismo y formas de habitar la ciudad sobre dos ruedas, empezó también esta historia.
+      Ahí, donde durante años han nacido ideas, activismo y formas de habitar la ciudad sobre dos ruedas, empezó también esta historia.
     </p>
   </section>
 
@@ -186,10 +387,10 @@
   <!-- TEXTO 2 -->
  <section class="container text fade">
     <p>
-      Desde el primer ascenso la montaña empezó a hablar.<br>
-      Cada quien a su ritmo, avanzando y esperando a los demás.<br><br>
+      Desde el primer ascenso cada quién encontró su ritmo con la montaña.<br>
+      Avanzando y esperando a los demás.<br><br>
 
-      Nos fuimos encontrando, como si la ruta nos estuviera esperando.<br><br>
+      Nos fuimos encontrando, como si la ruta esperara por cada uno.<br><br>
 
       Andrés y Camila desde el centro, Silvia en la Torre, Mauren, Valentina y Ubeimar en Moravia, Kevin más arriba, Diego en Guarne.
     </p>
@@ -199,7 +400,7 @@
   <section class="row fade">
     <img src="Imagenes Doradal/imagen3.jpg">
     <div>
-      La comida y el café se volvieron puntos de encuentro, excusas para detenernos y recordarnos que esto no se trataba de llegar primero, sino de llegar.
+      La comida y el café se volvieron puntos de encuentro, excusas para detenernos y recordarnos que esto no se trataba de llegar primero, sino de llegar juntos.
     </div>
   </section>
 
@@ -311,7 +512,7 @@
     <p>
       El Alto del Pollo nos encontró sin mucho más que dar.<br><br>
 
-     Pero la moral seguía intacta.<br><br><br>
+     Pero la moral seguía.<br><br><br>
      El barrio nos recibió con aplausos y arroz con pollo.<br>
      Habíamos llegado.No era solo un destino.<br><br>
      Era el origen de nuestra querida Mauren.<br><br>
@@ -332,8 +533,8 @@
       Sin prisa.<br>
       Ahora somos un poco de este lugar.<br>
       Nos llevamos el calor, el río, los rostros, las manos que nos cocinaron.<br><br>
-      Por eso pedaleamos. <br>
-      Porque en el camino vamos guardando pedazos del mundo dentro del cuerpo. <br>
+       <br>
+      En el camino vamos guardando pedazos del mundo dentro del cuerpo. <br>
       Y un día, sin darnos cuenta,<br>
       también nosotros nos volvemos territorio.<br><br>
 
@@ -341,13 +542,73 @@
   </section>
 
   <!-- CIERRE -->
-  <section class="footer">
-    <p>Una bitácora de Vivir en Cicla</p>
+  <section class="creditos">
+    <p>Una Crónica de Vivir en Cicla</p>
     <p>Fotografías: Andrés Usuga</p>
     <p>Narración: María Camila Castellanos</p>
   </section>
 
-</body>
+   <!-- FOOTER  -->
+
+<footer class="footer">
+
+  <div class="footer-grid">
+
+    <div class="footer-brand">
+      <h3>Vivir en Cicla</h3>
+      <p>
+        Historias, arte y encuentros
+      </p>
+    </div>
+
+    <div class="footer-nav">
+      <h4>Explorar</h4>
+      <a href="cronicas.html">Crónicas</a>
+      <a href="arte.html">Arte</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="comunidad.html">Comunidad</a>
+      <a href="mailto:contacto@vivirencicla.com">Contacto</a>
+    </div>
+
+    <div class="footer-social">
+      <h4>Redes</h4>
+
+      <a href="https://www.instagram.com/vivirencicla/">Instagram</a>
+      <a href="https://www.youtube.com/@vivirencicla">YouTube</a>
+      <a href="https://www.facebook.com/profile.php?id=61582653868742">Facebook</a>
+      <a href="https://www.patreon.com/c/vivirencicla03/membership">Patreon</a>
+      <a href="https://vaki.co/vaki/cada-pedalazo-cuenta">Vaki</a>
+      <a href="https://www.tiktok.com/@vivirencicla">TikTok</a>
+    </div>
+
+    <div class="footer-newsletter">
+
+      <h4>Novedades</h4>
+
+      <p>
+        Recibe noticias del viaje, nuevas crónicas y próximos proyectos.
+      </p>
+
+      <form>
+        <input type="email" placeholder="Tu correo electrónico">
+        <button type="submit">Suscribirme</button>
+      </form>
+
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Vivir en Cicla
+  </div>
+
+</footer>
+<script src="header.js"></script>
+<script>
+function toggleMenu() {
+  document.getElementById("navMenu").classList.toggle("active");
+}
+</script>
 <script>
 const elements = document.querySelectorAll('.fade');
 
@@ -363,4 +624,5 @@ const observer = new IntersectionObserver((entries) => {
 
 elements.forEach(el => observer.observe(el));
 </script>
+</body>
 </html>

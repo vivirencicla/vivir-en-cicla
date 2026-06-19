@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vivir en Cicla</title>
+
+<style>
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BASE */
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0b0b0b;
+  color: white;
+  line-height: 1.6;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  z-index: 999;
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.header-logo {
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: white;
+  text-decoration: none;
+}
+.nav-menu {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+}
+
+/* función celulares*/
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: rgba(0,0,0,0.9);
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+  .hero-cronicas {
+    height: 85vh;
+  }
+
+  .hero-cronicas img {
+    transform: none;
+    object-position: 75% center;
+  }
+
+  .hero-content {
+    left: 20px;
+    right: 20px;
+    max-width: none;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+    line-height: 0.95;
+  }
+}
+
+/* =========================
+   HERO (CINEMATOGRÁFICO)
+========================= */
+
+.hero-cronicas {
+  height: 85vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-cronicas img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.1) brightness(0.6);
+  transform: scale(1.05);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.2)
+  );
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  max-width: 600px;
+}
+
+.hero-content p {
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  letter-spacing: 3px;
+  margin-top: 10px;
+}
+
+.hero-content span {
+  opacity: 0.8;
+  display: block;
+  margin-top: 10px;
+}
+
+/* =========================
+   INTRO (VOZ EN OFF)
+========================= */
+
+.intro {
+  padding: 120px 20px;
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.1rem;
+  opacity: 0.85;
+  line-height: 1.8;
+}
+
+/* =========================
+   DESTACADA (ESCENA PRINCIPAL)
+========================= */
+
+.destacada {
+  position: relative;
+  height: 80vh;
+  margin: 80px 0;
+}
+
+.destacada-link {
+  display: block;
+  height: 100%;
+  position: relative;
+}
+
+.destacada-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.destacada-texto {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  max-width: 500px;
+}
+
+.destacada-texto span {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.destacada-texto h2 {
+  font-size: 2.5rem;
+  margin-top: 10px;
+}
+
+.destacada-texto p {
+  opacity: 0.8;
+  margin-top: 10px;
+}
+
+/* =========================
+   ARCHIVO (MAPA NARRATIVO)
+========================= */
+
+.archivo {
+  padding: 80px 20px;
+}
+
+.archivo h2 {
+  margin-bottom: 40px;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+/* GRID NARRATIVO */
+.archivo-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+
+/* Jerarquía tipo documental */
+.card:nth-child(1) {
+  grid-column: span 12;
+}
+
+.card:nth-child(2),
+.card:nth-child(3) {
+  grid-column: span 6;
+}
+
+.card:nth-child(n+4) {
+  grid-column: span 4;
+}
+
+/* CARD */
+.card {
+  display: block;
+  text-decoration: none;
+  color: white;
+  background: #151515;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  filter: grayscale(0.1) contrast(1.1);
+  transition: 0.4s;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin: 15px 15px 5px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin: 0 15px 15px;
+}
+
+/* =========================
+   CIERRE (DOCUMENTAL FINAL)
+========================= */
+
+.cierre {
+  padding: 120px 20px;
+  text-align: center;
+  font-size: 1.5rem;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+/* =========================
+   ESPACIADO GENERAL (RITMO CINEMATOGRÁFICO)
+========================= */
+
+section {
+  margin-bottom: 120px;
+}
+
+/* LINKS */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* FOOTER */
+.footer {
+  background: #050505;
+  padding: 100px 30px 40px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-grid {
+  max-width: 1200px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 60px;
+}
+
+.footer h3 {
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.footer h4 {
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.footer p {
+  opacity: 0.7;
+  line-height: 1.7;
+}
+
+.footer a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  opacity: 0.7;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  opacity: 1;
+}
+
+.footer-newsletter form {
+  margin-top: 20px;
+}
+
+.footer-newsletter input {
+  width: 100%;
+  padding: 14px;
+  background: #111;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.footer-newsletter button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  background: white;
+  color: black;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 80px;
+  opacity: 0.5;
+  font-size: 0.9rem;
+}
+@media (max-width: 768px) {
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    text-align: left;
+  }
+
+  .footer {
+    padding: 50px 20px;
+  }
+
+  .footer-brand h3 {
+    font-size: 20px;
+  }
+
+  .footer-nav a,
+  .footer-social a {
+    display: block;
+    margin: 6px 0;
+    font-size: 14px;
+  }
+
+  .footer-newsletter input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .footer-newsletter button {
+    width: 100%;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 30px;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .hero-content {
+    left: 20px;
+    right: 20px;
+    bottom: 12%;
+    max-width: none;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+    line-height: 0.95;
+    letter-spacing: 1px;
+  }
+
+  .hero-content p {
+    font-size: 0.85rem;
+  }
+
+}
+</style>
+</head>
+
+<body>
+<div id="header-container"></div>
+<!-- HERO CRÓNICAS -->
+<section class="hero-cronicas">
+
+  <img src="imagenes cronicas/cronicashero.jpg" alt="Crónicas">
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <p>Vivir en Cicla</p>
+    <h1>CRÓNICAS</h1>
+    <span>Historias de territorio, comunidad y encuentro</span>
+  </div>
+</section>
+<!-- INTRO -->
+<section class="intro">
+  <div class="intro-container">
+    <p>
+      Lo que tienen por contar los pueblos no aparece en los mapas.<br>
+      Aquí compartimos relatos del sur: algunos alegres, otros inhóspitos y muchos olvidados por el tiempo.<br>
+      La bicicleta nos permite detenernos a escuchar a las comunidades, observar, habitar Suramérica a otro ritmo <br>
+      y contar aquello que todavía tienen por compartir con el mundo.
+    </p>
+  </div>
+</section>
+<!-- CRÓNICA DESTACADA -->
+<section class="destacada">
+  <a href="medellin-doradal.html" class="destacada-link">
+
+    <img src="imagenes cronicas/doradalcronicas.jpg" alt="Doradal">
+    <div class="destacada-texto">
+      <span>Crónica destacada</span>
+      <h2>Doradal, El Corazón de Colombia</h2>
+      <p>
+        Un recorrido entre comunidad, el magdalena medio y raíces compartidas
+      </p>
+    </div>
+
+  </a>
+
+</section>
+
+<!-- ARCHIVO -->
+<section class="archivo">
+
+  <h2>Archivo de crónicas</h2>
+
+  <div class="archivo-grid">
+
+    <a href="cisneros.html" class="card">
+      <img src="imagenes cronicas/cisneroscronicas.jpg" alt="">
+      <h3>Cisneros,Pedaleando por el ferrocarril de Antioquia</h3>
+      <p>Ferrocarril, historia y túneles de Antioquia</p>
+    </a>
+
+    <a href="triton.html" class="card">
+      <img src="imagenes cronicas/eltritoncronicas.jpg" alt="">
+      <h3>El Tritón</h3>
+      <p>Explorando el Gran Cañón del Chicamocha en un acto de amor al cine</p>
+    </a>
+
+  </div>
+
+</section>
+
+<!-- FRASE FINAL -->
+<section class="cierre">
+
+  <p>
+    Sudamérica es el camino<br>
+La bicicleta es el puente<br>
+Las historias son el lenguaje<br>
+  </p>
+
+</section>
+ <!-- FOOTER  -->
+
+<footer class="footer">
+
+  <div class="footer-grid">
+
+    <div class="footer-brand">
+      <h3>Vivir en Cicla</h3>
+      <p>
+        Historias, arte y encuentros
+      </p>
+    </div>
+
+    <div class="footer-nav">
+      <h4>Explorar</h4>
+
+      <a href="cronicas.html">Crónicas</a>
+      <a href="arte.html">Arte</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="comunidad.html">Comunidad</a>
+      <a href="mailto:contacto@vivirencicla.com">Contacto</a>
+    </div>
+
+    <div class="footer-social">
+      <h4>Redes</h4>
+
+      <a href="https://www.instagram.com/vivirencicla/">Instagram</a>
+      <a href="https://www.youtube.com/@vivirencicla">YouTube</a>
+      <a href="https://www.facebook.com/profile.php?id=61582653868742">Facebook</a>
+      <a href="https://www.patreon.com/c/vivirencicla03/membership">Patreon</a>
+      <a href="https://vaki.co/vaki/cada-pedalazo-cuenta">Vaki</a>
+      <a href="https://www.tiktok.com/@vivirencicla">TikTok</a>
+    </div>
+
+    <div class="footer-newsletter">
+
+      <h4>Novedades</h4>
+
+      <p>
+        Recibe noticias del viaje, nuevas crónicas y próximos proyectos.
+      </p>
+
+      <form>
+        <input type="email" placeholder="Tu correo electrónico">
+        <button type="submit">Suscribirme</button>
+      </form>
+
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Vivir en Cicla
+  </div>
+
+</footer>
+<script src="header.js"></script>
+<script>
+function toggleMenu() {
+  document.getElementById("navMenu").classList.toggle("active");
+}
+</script>
+</body>
+</html>

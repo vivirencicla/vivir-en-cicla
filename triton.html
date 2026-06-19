@@ -24,7 +24,6 @@ body {
   background: #0b0b0b;
   color: white;
 }
-
 /* HEADER */
 .header {
   position: fixed;
@@ -38,17 +37,17 @@ body {
   backdrop-filter: blur(10px);
   z-index: 999;
 }
-
-.header a {
-  color: white;
-  text-decoration: none;
-  margin: 0 10px;
-  font-size: 0.9rem;
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
-
 .header-logo {
   font-weight: 600;
   letter-spacing: 2px;
+  color: white;
+  text-decoration: none;
 }
 
 /* HERO */
@@ -153,17 +152,7 @@ body {
   font-size: 0.9rem;
   opacity: 0.7;
 }
-@media (max-width: 768px) {
-
-
-  .header-logo {
-    position: static;
-    transform: none;
-    order: -1;
-    margin-bottom: 5px;
-  }
-
-}
+/* función celulares*/
 .menu-icon {
   display: none;
   font-size: 1.8rem;
@@ -202,41 +191,126 @@ body {
     display: flex;
   }
 }
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* FOOTER */
+.footer {
+  background: #050505;
+  padding: 100px 30px 40px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-grid {
+  max-width: 1200px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 60px;
+}
+
+.footer h3 {
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.footer h4 {
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.footer p {
+  opacity: 0.7;
+  line-height: 1.7;
+}
+
+.footer a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  opacity: 0.7;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  opacity: 1;
+}
+
+.footer-newsletter form {
+  margin-top: 20px;
+}
+
+.footer-newsletter input {
   width: 100%;
+  padding: 14px;
+  background: #111;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.footer-newsletter button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  background: white;
+  color: black;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 80px;
+  opacity: 0.5;
+  font-size: 0.9rem;
+}
+@media (max-width: 768px) {
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    text-align: left;
+  }
+
+  .footer {
+    padding: 50px 20px;
+  }
+
+  .footer-brand h3 {
+    font-size: 20px;
+  }
+
+  .footer-nav a,
+  .footer-social a {
+    display: block;
+    margin: 6px 0;
+    font-size: 14px;
+  }
+
+  .footer-newsletter input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .footer-newsletter button {
+    width: 100%;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 30px;
+  }
+
 }
 </style>
 </head>
 
 <body>
-
-<!-- HEADER -->
-<header class="header">
-
-  <div class="header-inner">
-
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
-
-    <a href="index.html" class="header-logo">Vivir en Cicla</a>
-
-    <div class="nav-menu" id="navMenu">
-
-      <a href="cronicas.html">Crónicas</a>
-      <a href="arte.html">Arte</a>
-
-      <a href="nosotros.html">Nosotros</a>
-
-      <a href="comunidad.html">Comunidad</a>
-
-    </div>
-
-  </div>
-
-</header>
-
+<div id="header-container"></div>
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
@@ -294,9 +368,57 @@ body {
         <p>Un viaje hacia la profundidad del cañón más grande de Colombia.</p>
       </div>
     </a>
-
   </div>
 </section>
+<!-- FOOTER  -->
+
+<footer class="footer">
+
+  <div class="footer-grid">
+
+    <div class="footer-brand">
+      <h3>Vivir en Cicla</h3>
+      <p>
+        Historias, arte y encuentros
+      </p>
+    </div>
+
+    <div class="footer-nav">
+      <h4>Explorar</h4>
+
+      <a href="cronicas.html">Crónicas</a>
+      <a href="arte.html">Arte</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="comunidad.html">Comunidad</a>
+      <a href="mailto:contacto@vivirencicla.com">Contacto</a>
+    </div>
+
+    <div class="footer-social">
+      <h4>Redes</h4>
+
+      <a href="https://www.instagram.com/vivirencicla/">Instagram</a>
+      <a href="https://www.youtube.com/@vivirencicla">YouTube</a>
+      <a href="https://www.facebook.com/profile.php?id=61582653868742">Facebook</a>
+      <a href="https://www.patreon.com/c/vivirencicla03/membership">Patreon</a>
+      <a href="https://vaki.co/vaki/cada-pedalazo-cuenta">Vaki</a>
+      <a href="https://www.tiktok.com/@vivirencicla">TikTok</a>
+    </div>
+    <div class="footer-newsletter">
+      <h4>Novedades</h4>
+      <p>
+        Recibe noticias del viaje, nuevas crónicas y próximos proyectos.
+      </p>
+      <form>
+        <input type="email" placeholder="Tu correo electrónico">
+        <button type="submit">Suscribirme</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Vivir en Cicla
+  </div>
+</footer>
+<script src="header.js"></script>
 <script>
 function toggleMenu() {
   document.getElementById("navMenu").classList.toggle("active");

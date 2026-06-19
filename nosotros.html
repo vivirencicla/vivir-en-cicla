@@ -3,26 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vivir en Cicla</title>
+<title>Nosotros | Vivir en Cicla</title>
 
 <style>
 
-/* RESET */
+/* =========================
+   BASE CRUDA
+========================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  font-size: 18px;
-  scroll-behavior: smooth;
-}
-
 body {
+  background: #0a0a0a;
+  color: #f2f2f2;
   font-family: Arial, sans-serif;
-  background: #0b0b0b;
-  color: white;
+  line-height: 1.9;
 }
 
 /* HEADER */
@@ -50,111 +49,164 @@ body {
   color: white;
   text-decoration: none;
 }
+/* =========================
+   HERO CRUDO
+========================= */
 
-/* HERO */
 .hero {
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
-  text-align: center;
   overflow: hidden;
+  margin-bottom: 10px;
 }
 
-.hero-bg {
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(10%) contrast(1.2) brightness(0.55);
+  transform: scale(1.08);
+}
+
+.hero::after {
+  content: "";
   position: absolute;
   inset: 0;
-  background: 
-    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)),
-    url('hero.jpg') center/cover no-repeat;
-  opacity: 1;
+  background: rgba(0,0,0,0.35);
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
+.hero-text {
+  position: absolute;
+  bottom: 10%;
+  left: 6%;
+  max-width: 500px;
 }
 
 .hero-text h1 {
-  font-size: 3rem;
-  letter-spacing: 3px;
+  font-size: 3.5rem;
+  letter-spacing: 4px;
 }
 
 .hero-text p {
-  margin-top: 10px;
-  opacity: 0.8;
+  opacity: 0.75;
 }
 
-/* BOTÓN PRO */
-.hero-button {
-  margin-top: 30px;
-  display: inline-block;
-  padding: 14px 26px;
-  color: black;
-  background: white;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 10px;
-  transition: 0.3s;
-}
+/* =========================
+   ESCENAS CRUDAS
+========================= */
 
-.hero-button:hover {
-  transform: translateY(-3px);
-  background: #eaeaea;
-}
-
-/* SECCIÓN BITÁCORA */
-.section {
-  padding: 80px 20px;
-  background: #0b0b0b;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-/* CARDS */
-.card {
-  display: block;
-  text-decoration: none;
-  color: white;
-  background: #151515;
-  border-radius: 12px;
+.scene {
+  position: relative;
   overflow: hidden;
-  transition: 0.3s;
 }
 
-.card:hover {
-  transform: translateY(-5px);
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 6%;
+  z-index: 2;
 }
-
-.card-image img {
-  width: 100%;
-  height: 180px;
+/* imagen con look documental */
+.scene img {
+  width: 110%;
+  height: 110%;
   object-fit: cover;
-  display: block;
+  filter: grayscale(15%) contrast(1.3) brightness(0.5);
+  transform: scale(1.05) translateX(-2%);
 }
 
-.card-text {
-  padding: 15px;
+/* overlay sucio */
+.scene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.85)
+  );
 }
 
-.card-text h2 {
-  font-size: 1.1rem;
-  margin-bottom: 8px;
+/* texto tipo voz en off */
+.voice {
+  position: static;
+  max-width: 600px;
 }
 
-.card-text p {
-  font-size: 0.9rem;
-  opacity: 0.7;
+.voice.right {
+  left: auto;
+  right: 6%;
+  text-align: right;
 }
 
-/* FUNCIÓN CELULARES */
+.voice h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.voice p {
+  opacity: 0.85;
+  font-size: 1.05rem;
+}
+
+/* =========================
+   SILENCIO (RESPIRACIÓN REAL)
+========================= */
+
+.silence {
+  min-height: 60vh;
+  background: #050505;
+  padding: 140px 0;
+}
+
+.silence p {
+  max-width: 750px;
+  margin-left: 12%;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  opacity: 0.85;
+  font-style: normal;
+}
+/* =========================
+   FINAL
+========================= */
+
+.end {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+  opacity: 0.6;
+  font-style: italic;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .hero-text h1 {
+    font-size: 2.4rem;
+  }
+
+  .voice,
+  .voice.right {
+    left: 5%;
+    right: 5%;
+    text-align: left;
+  }
+
+  .voice h2 {
+    font-size: 1.6rem;
+  }
+}
+/* función celulares*/
 .menu-icon {
   display: none;
   font-size: 1.8rem;
@@ -193,13 +245,12 @@ body {
     display: flex;
   }
 }
-
+/* FOOTER */
 .footer {
   background: #050505;
   padding: 100px 30px 40px;
   border-top: 1px solid rgba(255,255,255,0.08);
 }
-
 .footer-grid {
   max-width: 1200px;
   margin: auto;
@@ -316,63 +367,68 @@ body {
 <div id="header-container"></div>
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
+  <img src="imagenes nosotros/lagente.jpg">
+  <div class="hero-text">
+    <h1>NOSOTROS</h1>
+    <p>Creemos en la bicicleta, el arte y las historias.</p>
+  </div>
+</section>
+<section class="silence">
+  <p>
+    Promovemos formas de vida en movimiento para habitar el presente y el cuerpo como un territorio libre.<br>
+    Narramos las realidades de Sudamérica.<br>
+    Reconocemos su diversidad como una riqueza colectiva que merece ser contada y preservada.<br>
+  </p>
+</section>
+<!-- ESCENA 1 -->
+<section class="scene">
+  <img src="imagenes nosotros/andres.jpg">
 
-  <div class="hero-content">
-    <div class="hero-text">
-      <h1>RUMBO<br>AL SUR</h1>
-      <p>Pedaleando Latinoamérica</p>
-
-      <a href="comunidad.html" class="hero-button">Venir al viaje</a>
+  <div class="overlay">
+    <div class="voice">
+      <h2>Andrés Usuga</h2>
+      <p>Contempla el camino a través de la fotografía</p>
     </div>
   </div>
 </section>
 
-<!-- BITÁCORA -->
-<section class="section">
-  <div class="container">
-
-    <a href="medellin-doradal.html" class="card">
-      <div class="card-image">
-        <img src="Imagenes Doradal/doradal.jpg">
-      </div>
-      <div class="card-text">
-        <h2>Doradal, El Corazón de Colombia</h2>
-        <p>Un recorrido entre comunidad y territorio. La bicicleta como forma del paisaje.</p>
-      </div>
-    </a>
-
-    <a href="cisneros.html" class="card">
-      <div class="card-image">
-        <img src="Imagenes Doradal/cisneros.jpg">
-      </div>
-      <div class="card-text">
-        <h2>Cisneros, Pedaleando por el Ferricarril de Antioquia </h2>
-        <p>Através de la memoria del ferrocarril y los túneles de Antioquia.</p>
-      </div>
-    </a>
- <a href="cronicas.html" class="card">
-      <div class="card-image">
-        <img src="Imagenes Doradal/santander.jpg">
-      </div>
-      <div class="card-text">
-        <h2>El Tritón, Gran cañón del Chicamocha</h2>
-        <p>Un viaje hacia la profundidad del cañón más grande de Colombia.</p>
-      </div>
-    </a>
-    <a href="arte.html" class="card">
-      <div class="card-image">
-        <img src="Imagenes Doradal/nieve.jpg">
-      </div>
-      <div class="card-text">
-        <h2>Arte</h2>
-        <p>Explorando el linoleo y la serigrafía.</p>
-      </div>
-    </a>
-  </div>
+<!-- SILENCIO -->
+<section class="silence">
+  <p>
+    Queremos inspirar a otras personas, especialmente mujeres y jóvenes, a imaginar y construir formas más justas de habitar el mundo.<br>
+    En el camino dialogamos con la memoria cultural y social de los pueblos que han moldeado nuestra identidad latinoamericana.
+  </p>
 </section>
 
-<!-- FOOTER  -->
+<!-- ESCENA 2 -->
+<section class="scene">
+  <img src="imagenes nosotros/camila2.jpg">
+  <div class="overlay">
+    <div class="voice">
+      <h2>María Camila Castellanos</h2>
+      <p>Teje relatos entre la memoria colectiva y el movimiento.</p>
+    </div>
+  </div>
+</section>
+<!-- SILENCIO -->
+<section class="silence">
+  <p>
+    Vivir en Cicla es una experiencia de dinámicas humanas complejas, tanto hermosas.<br>
+    Que nos permiten emprender los desafíos como oportunidades de aprendizaje y crecimiento. <br>
+    Entendemos el movimiento como una forma de resistencia desde el cuerpo, la creación y el propósito.<br>
+  </p>
+</section>
+<!-- ESCENA 3 -->
+<section class="scene">
+  <img src="imagenes nosotros/juan.jpg">
+    <div class="overlay">
+    <div class="voice">
+    <h2>Juan David Jaimes</h2>
+    <p>Escucha, pregunta y revela las historias que el camino guarda</p>
+    </div>
+  </div>
+</section>
+ <!-- FOOTER  -->
 
 <footer class="footer">
 
