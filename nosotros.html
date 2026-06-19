@@ -190,11 +190,18 @@ body {
 ========================= */
 
 @media (max-width: 768px) {
+/* Ajustes para que la imagen respire en celulares */
+  .hero {
+    height: 60vh; /* Bajamos la altura para que no sea tan vertical y no corte los lados */
+  }
 
+  .hero img {
+    object-position: center center; /* Asegura que el centro de la foto (ustedes) se mantenga enfocado */
+    transform: scale(1); /* Quitamos el zoom extra para recuperar los bordes de la foto */
+  }
   .hero-text h1 {
     font-size: 2.4rem;
   }
-
   .voice,
   .voice.right {
     left: 5%;

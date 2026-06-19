@@ -55,6 +55,9 @@ body {
   height: 100%;
   object-fit: cover;
   filter: brightness(50%);
+  
+  /* Ajuste para PC: Mueve la foto a la izquierda (35%) y la baja (25%) */
+  object-position: 35% 25%; 
 }
 
 .hero-content {
@@ -166,14 +169,27 @@ body {
 @media (max-width: 768px) {
 
   .hero {
-    height: 85vh;
-    min-height: 500px;
+    height: 65vh;        /* Un alto ideal para que no se recorte tanto */
+    min-height: 400px;   
+  }
+
+  .hero img {
+    /* X -> Mueve la foto a la derecha (ajusta entre 20% y 45% si quieres más o menos)
+       Y -> Empuja la foto hacia abajo (ajusta entre 35% y 50% si quieres que baje más) X%,Y%
+    */
+    object-position: 60% 100%; 
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
   }
 
   .hero-content p {
     font-size: 1rem;
   }
 
+  /* ... El resto de tu código del menú móvil (menu-icon, nav-menu) se queda exactamente igual ... */
+}
   .menu-icon {
     display: block;
   }
@@ -193,7 +209,6 @@ body {
     display: flex;
   }
 }
-
 .cta {
   padding: 140px 20px;
   text-align: center;
