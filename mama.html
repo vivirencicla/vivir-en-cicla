@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arte | Vivir en Cicla</title>
+<title>Mamá | Vivir en Cicla</title>
 
 <style>
-
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -25,7 +23,7 @@ body {
   color: white;
   line-height: 1.6;
 }
-/* HEADER */
+
 .header {
   position: fixed;
   top: 0;
@@ -38,12 +36,14 @@ body {
   backdrop-filter: blur(10px);
   z-index: 999;
 }
+
 .header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
+
 .header-logo {
   font-weight: 600;
   letter-spacing: 2px;
@@ -51,7 +51,6 @@ body {
   text-decoration: none;
 }
 
-/* función celulares*/
 .menu-icon {
   display: none;
   font-size: 1.8rem;
@@ -69,217 +68,12 @@ body {
   text-decoration: none;
 }
 
-@media (max-width: 768px) {
-
-  .menu-icon {
-    display: block;
-  }
-
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    background: rgba(0,0,0,0.9);
-    padding: 15px;
-    border-radius: 10px;
-  }
-
-  .nav-menu.active {
-    display: flex;
-  }
-}
-
-/* =========================
-   HERO ARTE (MUSEO / GALERÍA)
-========================= */
-
 .hero-arte {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2));
-}
-
-.hero-content {
-  position: relative;
-  text-align: center;
-  max-width: 700px;
-  padding: 20px;
-}
-
-.hero-content h1 {
-  font-size: 4rem;
-  letter-spacing: 4px;
-}
-
-.hero-content p {
-  margin-top: 10px;
-  opacity: 0.8;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-/* =========================
-   INTRO (curatorial / museo)
-========================= */
-
-.intro-arte {
-  max-width: 750px;
-  margin: 120px auto;
-  padding: 0 20px;
-  font-size: 1.1rem;
-  opacity: 0.85;
-  text-align: left;
-  line-height: 1.8;
-}
-
-/* =========================
-   COLECCIONES (EXPOSICIÓN)
-========================= */
-
-.section {
-  padding: 60px 20px;
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 1.2rem;
-  letter-spacing: 2px;
-  opacity: 0.8;
-}
-
-/* GRID EDITORIAL */
-.grid-arte {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 30px;
-  max-width: 900px;
-  margin: auto;
-}
-
-/* jerarquía artística */
-.art-card:nth-child(1),
-.art-card:nth-child(2),
-.art-card:nth-child(3),
-.art-card:nth-child(4) {
-  grid-column: span 6;
-}
-
-.art-card:nth-child(n+5) {
-  grid-column: span 4;
-}
-
-/* CARD */
-.art-card {
-  text-decoration: none;
-  color: white;
-  background: #151515;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: 0.4s;
-}
-
-.art-card:hover {
-  transform: translateY(-5px);
-}
-.poster-frame {
-  width: 100%;
-  padding: 20px;
-  background: #111;
-  border: 1px solid rgba(255,255,255,0.1);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-  transition: all 0.5s ease;
-}
-.art-card img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-}
-
-.art-card:hover img {
-  transform: scale(1.05);
-}
-
-.art-card h3 {
-  padding: 15px 15px 5px;
-  font-size: 1.1rem;
-}
-
-.art-card p {
-  padding: 0 15px 15px;
-  opacity: 0.7;
-  font-size: 0.9rem;
-}
-.art-card:hover .poster-frame {
-  transform: scale(1.03);
-  box-shadow: 0 30px 70px rgba(0,0,0,0.7);
-  border: 1px solid rgba(255,255,255,0.25);
-}
-.art-card:hover .poster-frame img {
-  filter: brightness(1.1) contrast(1.1);
-  transition: all 0.5s ease;
-}
-/* =========================
-   ESPACIO (MUY IMPORTANTE EN ARTE)
-========================= */
-
-.spacer {
-  height: 120px;
-}
-
-/* =========================
-   CIERRE (GALERÍA FINAL)
-========================= */
-
-.cierre-arte {
-  text-align: center;
-  padding: 120px 20px;
-  font-size: 1.4rem;
-  font-style: italic;
-  opacity: 0.7;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-
-  .hero-content h1 {
-    font-size: 2.8rem;
-  }
-
-  .grid-arte {
-    grid-template-columns: 1fr;
-  }
-
-  .art-card {
-    grid-column: span 1 !important;
-  }
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-.serigrafia-img {
-  width: 100%;
-  height: 180px; /* o el mismo alto que tus cards */
-  object-fit: cover;
-  object-position: center top;
-}
-.hero-arte {
-  position: relative;
-  height: 100vh;
   overflow: hidden;
 }
 
@@ -294,22 +88,189 @@ a {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.5);
+  background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.32));
 }
+
 .hero-content {
   position: relative;
   z-index: 2;
+  text-align: center;
+  max-width: 760px;
+  padding: 20px;
 }
-/* FOOTER */
+
+.hero-content h1 {
+  font-size: 4rem;
+  letter-spacing: 4px;
+}
+
+.hero-content p {
+  margin-top: 10px;
+  opacity: 0.82;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.intro-arte {
+  max-width: 850px;
+  margin: 150px auto;
+  padding: 0 25px;
+  font-size: 1.15rem;
+  opacity: 0.9;
+  line-height: 2;
+}
+
+.intro-arte p {
+  margin-bottom: 1rem;
+}
+
+.intro-arte p:last-child {
+  margin-bottom: 0;
+}
+
+.intro-arte h2 {
+  margin-bottom: 35px;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.obra-foto {
+  max-width: 1050px;
+  margin: 120px auto;
+  padding: 0 20px;
+}
+
+.obra-foto img {
+  width: 100%;
+  display: block;
+}
+
+.obra-foto.vertical {
+  max-width: 760px;
+}
+
+.obra-etapa {
+  position: relative;
+  background: #111;
+  border: 1px solid rgba(255,255,255,0.12);
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.obra-etapa img {
+  width: 100%;
+  display: block;
+}
+
+.obra-etapa .placeholder {
+  display: none;
+  padding: 80px 20px;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+.obra-etapa.sin-imagen img {
+  display: none;
+}
+
+.obra-etapa.sin-imagen .placeholder {
+  display: block;
+}
+
+.galeria-proceso {
+  max-width: 1200px;
+  margin: 120px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.galeria-proceso .obra-etapa {
+  aspect-ratio: 4 / 5;
+}
+
+.galeria-proceso img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+
+.grid-arte {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 40px auto 0;
+  padding: 0 20px;
+}
+
+.art-card {
+  text-decoration: none;
+  color: white;
+  background: #151515;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.4s;
+}
+.art-card:hover {
+  transform: translateY(-5px);
+}
+
+.art-card img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  background: #111;
+}
+
+.art-card:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1) contrast(1.1);
+}
+
+.art-card h3 {
+  padding: 15px 15px 5px;
+  font-size: 1.1rem;
+}
+
+.art-card p {
+  padding: 0 15px 15px;
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+.spacer {
+  height: 120px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .footer {
   background: #050505;
   padding: 100px 30px 40px;
   border-top: 1px solid rgba(255,255,255,0.08);
 }
+
 .footer-grid {
   max-width: 1200px;
   margin: auto;
-
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 60px;
@@ -376,7 +337,52 @@ a {
   opacity: 0.5;
   font-size: 0.9rem;
 }
+
 @media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: rgba(0,0,0,0.9);
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .intro-arte {
+    margin: 100px auto;
+  }
+
+  .obra-foto,
+  .galeria-proceso {
+    margin: 90px auto;
+  }
+
+  .galeria-proceso {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .grid-arte {
+    grid-template-columns: 1fr;
+  }
+
+  .art-card {
+    grid-column: span 1 !important;
+  }
 
   .footer-grid {
     grid-template-columns: 1fr;
@@ -399,11 +405,7 @@ a {
     font-size: 14px;
   }
 
-  .footer-newsletter input {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
+  .footer-newsletter input,
   .footer-newsletter button {
     width: 100%;
   }
@@ -413,34 +415,84 @@ a {
     font-size: 12px;
     margin-top: 30px;
   }
-
 }
 </style>
 </head>
 
 <body>
 <div id="header-container"></div>
-<!-- HERO ARTE -->
+
 <section class="hero-arte">
-
-  <img src="imagenes arte/eclipsearte.png" class="hero-bg">
-
+  <img src="imagenes arte/mama.jpg" class="hero-bg" alt="Fotografía original de Mamá" onerror="this.style.display='none'">
   <div class="hero-overlay"></div>
 
-<div class="hero-content">
-    <h1>ARTE</h1>
-    <p>Linóleo y Serigrafía</p>Curando las formas del paisaje</p>
+  <div class="hero-content">
+    <h1>Mamá</h1>
+    <p>Fotografía, intervención digital y serigrafía</p>
   </div>
 </section>
-<!-- INTRO -->
+
 <section class="intro-arte">
-  El camino también se transforma en imágenes.<br>
-  Esta sección reúne las ilustraciones, grabados y experimentos visuales <br>
-  inspirados en los paisajes, las personas y los encuentros que dan vida a cada viaje.
+  <p>
+    Tomé la fotografía que dio origen a esta obra hace tres años, mientras iba para el trabajo en bicicleta una mañana por la av 80 de Medellín.
+  </p>
+  <p>
+    Entre el ruido de los buses, los carros y el tráfico, esta escena me obligó a detenerme: una madre pedaleando junto a su hijo. Había algo profundamente hermoso en la tranquilidad que compartían, a pesar del entorno caótico que los rodeaba.
+  </p>
+  <p>
+    Durante este tiempo, cada vez que veía la foto sentía lo mismo por primera vez.
+  </p>
+  <p>
+    Admiré la fortaleza de aquella mujer y la forma en que protegía ese pequeño universo construido entre dos personas.
+  </p>
 </section>
-<!-- COLECCIÓN -->
+
+<section class="obra-foto">
+  <figure class="obra-etapa">
+    <img src="imagenes arte/mama.jpg" alt="Fotografía original de la obra Mamá" onerror="this.closest('figure').classList.add('sin-imagen')">
+    <figcaption class="placeholder">Fotografía original</figcaption>
+  </figure>
+</section>
+
+<section class="intro-arte">
+  <h2>Intervención digital</h2>
+  <p>
+    Tiempo después retomé la fotografía y comencé a transformarla digitalmente, simplificando formas y buscando una estética cercana a la gráfica impresa.
+  </p>
+</section>
+
+<section class="obra-foto">
+  <figure class="obra-etapa">
+    <img src="imagenes arte/mamavector.jpg" alt="Intervención digital de la obra Mamá" onerror="this.closest('figure').classList.add('sin-imagen')">
+    <figcaption class="placeholder">Intervención digital</figcaption>
+  </figure>
+</section>
+
+<section class="intro-arte">
+  <h2>Versión en halftone</h2>
+  <p>
+    La imagen fue convertida a trama de semitonos (halftone), pensando en las posibilidades de reproducción mediante serigrafía.
+  </p>
+  <p>
+    Esta obra fue concebida para convertirse en una estampa. El siguiente paso será revelarla en pantalla y experimentar con impresiones sobre papel y tela.
+  </p>
+</section>
+
+<section class="galeria-proceso">
+  <figure class="obra-etapa">
+    <img src="imagenes arte/mamahalf1.png" alt="Intervención digital de Mamá" onerror="this.closest('figure').classList.add('sin-imagen')">
+    <figcaption class="placeholder">Intervención digital</figcaption>
+  </figure>
+  <figure class="obra-etapa">
+    <img src="imagenes arte/mamahf.png" alt="Intervención digital de Mamá" onerror="this.closest('figure').classList.add('sin-imagen')">
+    <figcaption class="placeholder">Intervención digital</figcaption>
+  </figure>
+</section>
+
+<div class="section-title">
+  MÁS ARTE EN MOVIMIENTO
+</div>
 <section class="section">
-  <div class="section-title">COLECCIÓN</div>
   <div class="grid-arte">
 
     <a href="transformacion.html" class="art-card">
@@ -475,16 +527,8 @@ a {
 
 <div class="spacer"></div>
 
-<!-- CIERRE -->
-<section class="cierre-arte">
-  El arte mantiene viva el alma de Vivir en Cicla
-</section>
-<!-- FOOTER  -->
-
 <footer class="footer">
-
   <div class="footer-grid">
-
     <div class="footer-brand">
       <h3>Vivir en Cicla</h3>
       <p>
@@ -494,7 +538,6 @@ a {
 
     <div class="footer-nav">
       <h4>Explorar</h4>
-
       <a href="cronicas.html">Crónicas</a>
       <a href="arte.html">Arte</a>
       <a href="nosotros.html">Nosotros</a>
@@ -504,7 +547,6 @@ a {
 
     <div class="footer-social">
       <h4>Redes</h4>
-
       <a href="https://www.instagram.com/vivirencicla/">Instagram</a>
       <a href="https://www.youtube.com/@vivirencicla">YouTube</a>
       <a href="https://www.facebook.com/profile.php?id=61582653868742">Facebook</a>
@@ -514,9 +556,7 @@ a {
     </div>
 
     <div class="footer-newsletter">
-
       <h4>Novedades</h4>
-
       <p>
         Recibe noticias del viaje, nuevas crónicas y próximos proyectos.
       </p>
@@ -525,16 +565,14 @@ a {
         <input type="email" placeholder="vivirencicla@gmail.com">
         <button type="submit">Suscribirme</button>
       </form>
-
     </div>
-
   </div>
 
   <div class="footer-bottom">
     © 2026 Vivir en Cicla
   </div>
-
 </footer>
+
 <script src="header.js"></script>
 <script>
 function toggleMenu() {

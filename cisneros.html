@@ -5,211 +5,137 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cisneros, Pedaleando por el Ferrocarril de Antioquia</title>
   <style>
-    html, body {
+   html, body {
   overflow-x: hidden;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: black;
 }
-    .fade {
+
+/* ANIMACIONES */
+.fade {
   opacity: 0;
   transform: translateY(40px);
   transition: all 1.2s ease-out;
 }
+
 .fade.show {
   opacity: 1;
   transform: translateY(0);
 }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: black;
-    }
-    /* HERO */
-    .hero {
-      position: relative;
-      height: 100vh;
-      overflow: hidden;
-    }
 
-    .hero img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      top: 0;
-      left: 0;
-    }
+/* HERO */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
 
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.35);
-      z-index: 1;
-    }
+.hero img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+}
 
-    .hero-content {
-      position: absolute;
-      bottom: 60px;
-      left: 10%;
-      max-width: 600px;
-      color: white;
-      z-index: 2;
-    }
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 1;
+}
 
-    .hero-content p {
-      font-size: 14px;
-      margin: 0;
-    }
+.hero-content {
+  position: absolute;
+  bottom: 60px;
+  left: 10%;
+  max-width: 600px;
+  color: white;
+  z-index: 2;
+}
 
-    .hero-content h1 {
-      font-size: 56px;
-      margin-top: 10px;
-      line-height: 1.1;
-    }
-
-    /* TEXTO */
-    .container {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .text {
-      font-size: 21px;
-      line-height: 1.9;
-      margin: 100px auto;
-    }
-
-    /* IMÁGENES */
-    .media {
+.hero-content p {
+  font-size: 14px;
   margin: 0;
 }
-    .media img {
-      width: 100%;
-      display: block;
-    }
 
-    .media.medium {
-      max-width: 800px;
-    }
-
-    .media.small {
-      max-width: 600px;
-    }
-
-    /* ROW */
-    .row {
-      display: flex;
-      gap: 40px;
-      align-items: center;
-      max-width: 1000px;
-      margin: 120px auto;
-      padding: 0 20px;
-    }
-
-    .row img {
-      width: 80%;
-    }
-
-    .row div {
-      font-size: 20px;
-      line-height: 1.8;
-    }
-
-    /* CIERRE */
-    .footer {
-      padding: 120px 20px;
-      text-align: center;
-      font-size: 16px;
-    }
- /* HEADER */
-.header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(10px);
-  z-index: 999;
+.hero-content h1 {
+  font-size: 56px;
+  margin-top: 10px;
+  line-height: 1.1;
 }
-.header-inner {
+
+/* TEXTO */
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text {
+  font-size: 21px;
+  line-height: 1.9;
+  margin: 100px auto;
+}
+
+/* IMÁGENES */
+.media {
+  margin: 0;
+}
+
+.media img {
   width: 100%;
-  max-width: 1200px;
+  display: block;
+}
+
+.media.medium {
+  max-width: 800px;
+}
+
+.media.small {
+  max-width: 600px;
+}
+
+/* ROW */
+.row {
   display: flex;
-  justify-content: space-between;
+  gap: 40px;
   align-items: center;
-  padding: 18px 20px;
-  box-sizing: border-box;
-}
-.header-logo {
-  font-weight: 600;
-  letter-spacing: 2px;
-  color: white;
-  text-decoration: none;
-}
-.header a {
-  color: white !important;
-  text-decoration: none !important;
-}
-/* FUNCIÓN CELULARES */
-.menu-icon {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: white;
-}
-.nav-menu {
-  display: flex;
-  gap: 15px;
+  max-width: 1000px;
+  margin: 120px auto;
+  padding: 0 20px;
 }
 
-.nav-menu a {
-  white-space: nowrap;
+.row img {
+  width: 80%;
 }
 
-@media (max-width: 768px) {
-
-  .menu-icon {
-    display: block;
-  }
-
-  .nav-menu {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 10px;
-    left: auto;
-    max-width: calc(100vw - 20px);
-    background: rgba(0,0,0,0.9);
-    padding: 15px;
-    border-radius: 10px;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-10px);
-    transition: opacity 0.25s ease, transform 0.25s ease;
-  }
-
-  .nav-menu.active {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-.cronica-cierre {
-  padding: 120px 20px;
-  text-align: center;
-  font-size: 16px;
+.row div {
+  font-size: 20px;
+  line-height: 1.8;
 }
-/* FOOTER */
+
+/* FOOTER (BASE) */
 .footer {
   background: #050505;
   padding: 100px 30px 40px;
   border-top: 1px solid rgba(255,255,255,0.08);
   color: white;
 }
+   .creditos {
+      padding: 80px 20px 40px;
+      text-align: center;
+      font-size: 16px;
+      color: #333;
+    }
+    .creditos p {
+      margin: 4px 0;
+    }
 .footer-grid {
   max-width: 1200px;
   margin: auto;
-
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 60px;
@@ -276,57 +202,97 @@
   opacity: 0.5;
   font-size: 0.9rem;
 }
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  z-index: 999;
+}
+
+.header-inner {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  box-sizing: border-box;
+}
+
+.header-logo {
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: white;
+  text-decoration: none;
+}
+
+.header a {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+/* NAV DESKTOP */
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-menu a {
+  white-space: nowrap;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
 
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
-    text-align: left;
-  }
-
-  .footer {
-    padding: 50px 20px;
-  }
-
-  .footer-brand h3 {
-    font-size: 20px;
-  }
-
-  .footer-nav a,
-  .footer-social a {
+  .menu-icon {
     display: block;
-    margin: 6px 0;
-    font-size: 14px;
   }
 
-  .footer-newsletter input {
-    width: 100%;
-    margin-bottom: 10px;
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    max-width: calc(100vw - 20px);
+    background: rgba(0,0,0,0.9);
+    padding: 15px;
+    border-radius: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
   }
 
-  .footer-newsletter button {
-    width: 100%;
+  .nav-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
   }
-
-  .footer-bottom {
-    text-align: center;
-    font-size: 12px;
-    margin-top: 30px;
-  }
- }
-/* RESPONSIVE CRÓNICA */
-@media (max-width: 768px) {
 
   .hero-content {
-  left: 20px;
-  right: 20px;
-  bottom: 60px;
-}
+    left: 20px;
+    right: 20px;
+    bottom: 60px;
+  }
 
-.hero-content h1 {
-  font-size: 1.9rem;
-  line-height: 1.15;
-}
+  .hero-content h1 {
+    font-size: 1.9rem;
+    line-height: 1.15;
+  }
 
   .hero-content p {
     font-size: 0.9rem;
@@ -361,9 +327,20 @@
     max-width: 100%;
   }
 
-}
-html, body {
-  overflow-x: hidden;
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    text-align: left;
+  }
+
+  .footer {
+    padding: 50px 20px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+    margin-top: 30px;
+  }
 }
   </style>
 </head>
@@ -545,12 +522,12 @@ Nos invitó a conocer el proceso.
   </section>
 
   <!-- CIERRE -->
- <section class="cronica-cierre">
+  <section class="creditos">
     <p>Una Crónica de Vivir en Cicla</p>
     <p>Fotografías: Andrés Usuga</p>
     <p>Narración: María Camila Castellanos</p>
   </section>
-   <!-- FOOTER  -->
+  <!-- FOOTER  -->
 
 <footer class="footer">
 
@@ -565,6 +542,7 @@ Nos invitó a conocer el proceso.
 
     <div class="footer-nav">
       <h4>Explorar</h4>
+
       <a href="cronicas.html">Crónicas</a>
       <a href="arte.html">Arte</a>
       <a href="nosotros.html">Nosotros</a>
@@ -592,7 +570,7 @@ Nos invitó a conocer el proceso.
       </p>
 
       <form>
-        <input type="email" placeholder="Tu correo electrónico">
+        <input type="email" placeholder="vivirencicla@gmail.com">
         <button type="submit">Suscribirme</button>
       </form>
 

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arte | Vivir en Cicla</title>
+<title>Diosa de Nieve | Vivir en Cicla</title>
 
 <style>
 
@@ -25,6 +25,7 @@ body {
   color: white;
   line-height: 1.6;
 }
+
 /* HEADER */
 .header {
   position: fixed;
@@ -51,7 +52,6 @@ body {
   text-decoration: none;
 }
 
-/* función celulares*/
 .menu-icon {
   display: none;
   font-size: 1.8rem;
@@ -92,7 +92,7 @@ body {
 }
 
 /* =========================
-   HERO ARTE (MUSEO / GALERÍA)
+   HERO ARTE
 ========================= */
 
 .hero-arte {
@@ -104,14 +104,23 @@ body {
   overflow: hidden;
 }
 
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2));
+  background: linear-gradient(to top, rgba(0,0,0,0.88), rgba(0,0,0,0.28));
 }
 
 .hero-content {
   position: relative;
+  z-index: 2;
   text-align: center;
   max-width: 700px;
   padding: 20px;
@@ -130,25 +139,82 @@ body {
 }
 
 /* =========================
-   INTRO (curatorial / museo)
+   INTRO
 ========================= */
 
 .intro-arte {
-  max-width: 750px;
-  margin: 120px auto;
-  padding: 0 20px;
-  font-size: 1.1rem;
-  opacity: 0.85;
-  text-align: left;
-  line-height: 1.8;
+  max-width: 850px;
+  margin: 180px auto;
+  padding: 0 25px;
+  font-size: 1.15rem;
+  opacity: 0.9;
+  line-height: 2;
 }
 
-/* =========================
-   COLECCIONES (EXPOSICIÓN)
-========================= */
+.intro-arte p {
+  margin-bottom: 1rem;
+}
 
-.section {
-  padding: 60px 20px;
+.intro-arte p:last-child {
+  margin-bottom: 0;
+}
+
+.intro-arte h2 {
+  margin-bottom: 35px;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.obra-foto {
+  max-width: 1050px;
+  margin: 140px auto;
+  padding: 0 20px;
+}
+
+.obra-foto img {
+  width: 100%;
+  display: block;
+}
+
+.obra-foto.vertical {
+  max-width: 760px;
+}
+
+.cita-obra {
+  max-width: 900px;
+  margin: 140px auto;
+  padding: 0 25px;
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  font-style: italic;
+  opacity: .78;
+}
+
+.cita-obra p {
+  margin-bottom: 22px;
+}
+
+.galeria-documental {
+  max-width: 1200px;
+  margin: 120px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.galeria-documental img {
+  width: 100%;
+  display: block;
+}
+
+.galeria-documental.finales img {
+  aspect-ratio: 4 / 5;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .section-title {
@@ -159,28 +225,15 @@ body {
   opacity: 0.8;
 }
 
-/* GRID EDITORIAL */
 .grid-arte {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 30px;
-  max-width: 900px;
-  margin: auto;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 40px auto 0;
+  padding: 0 20px;
 }
 
-/* jerarquía artística */
-.art-card:nth-child(1),
-.art-card:nth-child(2),
-.art-card:nth-child(3),
-.art-card:nth-child(4) {
-  grid-column: span 6;
-}
-
-.art-card:nth-child(n+5) {
-  grid-column: span 4;
-}
-
-/* CARD */
 .art-card {
   text-decoration: none;
   color: white;
@@ -189,27 +242,20 @@ body {
   overflow: hidden;
   transition: 0.4s;
 }
-
 .art-card:hover {
   transform: translateY(-5px);
 }
-.poster-frame {
-  width: 100%;
-  padding: 20px;
-  background: #111;
-  border: 1px solid rgba(255,255,255,0.1);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-  transition: all 0.5s ease;
-}
+
 .art-card img {
   width: 100%;
-  height: auto;
   aspect-ratio: 3 / 4;
-  object-fit: cover;
+  object-fit: contain;
+  background: #111;
 }
 
 .art-card:hover img {
   transform: scale(1.05);
+  filter: brightness(1.1) contrast(1.1);
 }
 
 .art-card h3 {
@@ -222,94 +268,26 @@ body {
   opacity: 0.7;
   font-size: 0.9rem;
 }
-.art-card:hover .poster-frame {
-  transform: scale(1.03);
-  box-shadow: 0 30px 70px rgba(0,0,0,0.7);
-  border: 1px solid rgba(255,255,255,0.25);
-}
-.art-card:hover .poster-frame img {
-  filter: brightness(1.1) contrast(1.1);
-  transition: all 0.5s ease;
-}
-/* =========================
-   ESPACIO (MUY IMPORTANTE EN ARTE)
-========================= */
 
 .spacer {
   height: 120px;
-}
-
-/* =========================
-   CIERRE (GALERÍA FINAL)
-========================= */
-
-.cierre-arte {
-  text-align: center;
-  padding: 120px 20px;
-  font-size: 1.4rem;
-  font-style: italic;
-  opacity: 0.7;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-
-  .hero-content h1 {
-    font-size: 2.8rem;
-  }
-
-  .grid-arte {
-    grid-template-columns: 1fr;
-  }
-
-  .art-card {
-    grid-column: span 1 !important;
-  }
 }
 
 a {
   text-decoration: none;
   color: inherit;
 }
-.serigrafia-img {
-  width: 100%;
-  height: 180px; /* o el mismo alto que tus cards */
-  object-fit: cover;
-  object-position: center top;
-}
-.hero-arte {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
 
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-}
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
 /* FOOTER */
 .footer {
   background: #050505;
   padding: 100px 30px 40px;
   border-top: 1px solid rgba(255,255,255,0.08);
 }
+
 .footer-grid {
   max-width: 1200px;
   margin: auto;
-
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 60px;
@@ -376,7 +354,33 @@ a {
   opacity: 0.5;
   font-size: 0.9rem;
 }
+
 @media (max-width: 768px) {
+
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .intro-arte {
+    margin: 110px auto;
+  }
+
+  .galeria-documental {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .cita-obra {
+    font-size: 1.25rem;
+  }
+
+  .grid-arte {
+    grid-template-columns: 1fr;
+  }
+
+  .art-card {
+    grid-column: span 1 !important;
+  }
 
   .footer-grid {
     grid-template-columns: 1fr;
@@ -399,11 +403,7 @@ a {
     font-size: 14px;
   }
 
-  .footer-newsletter input {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
+  .footer-newsletter input,
   .footer-newsletter button {
     width: 100%;
   }
@@ -413,34 +413,90 @@ a {
     font-size: 12px;
     margin-top: 30px;
   }
-
 }
+
 </style>
 </head>
 
 <body>
 <div id="header-container"></div>
+
 <!-- HERO ARTE -->
 <section class="hero-arte">
-
-  <img src="imagenes arte/eclipsearte.png" class="hero-bg">
-
+  <img src="Imagenes arte/dulima.jpg" class="hero-bg" alt="Nevado del Tolima">
   <div class="hero-overlay"></div>
 
-<div class="hero-content">
-    <h1>ARTE</h1>
-    <p>Linóleo y Serigrafía</p>Curando las formas del paisaje</p>
+  <div class="hero-content">
+    <h1>Diosa de Nieve</h1>
+    <p>Ilustración digital</p>
   </div>
 </section>
+
 <!-- INTRO -->
 <section class="intro-arte">
-  El camino también se transforma en imágenes.<br>
-  Esta sección reúne las ilustraciones, grabados y experimentos visuales <br>
-  inspirados en los paisajes, las personas y los encuentros que dan vida a cada viaje.
+  <p>
+    Diosa de Nieve fue creada mientras escribía la bitácora de una travesía al Nevado del Tolima. Durante aquellos días la montaña dejó de ser únicamente un paisaje para convertirse en una fuerza antigua capaz de recordarnos nuestra fragilidad y, al mismo tiempo, nuestra fortaleza para resistir.
+  </p>
 </section>
-<!-- COLECCIÓN -->
+<section class="cita-obra">
+  <p>Nave cuerpo, llévame a la hora cero</p>
+  <p>Cuando el sol toca la nieve<br>cuando brota lava naranja debajo del suelo.</p>
+  <p>Siento cómo se derriten mis miedos.</p>
+  <p>Nace un nuevo aire que vibra sobre tu corazón de montaña.</p>
+  <p>Me enamoró en cada encuentro de tus tesoros,<br>creaste ambición hacia tus formas.</p>
+  <p>Tus cabellos son espinas de hielo,<br>sagradas canas de anciana sabia.</p>
+  <p>Nave cuerpo, asalta todas las cumbres<br>porque en todas ellas está tu hogar.</p>
+  <p>Donde renaceré.</p>
+  <p>A donde vayan tus fríos vientos, voy.</p>
+  <p>Tu fuerza es ilimitada, pero alcanzable.</p>
+  <p>Permíteme volver a abrazar a los que dejé,<br>volver a todos mis hogares.</p>
+  <p>Sabes que para mí no hay recorrido final,<br>todos mis pasos son la mitad de un próximo camino.</p>
+  <p>Permíteme volver a ti<br>como yo vuelvo a mí, y al todo, gracias a ti.</p>
+</section>
+
+<section class="obra-foto vertical">
+  <img src="imagenes arte/diosanieve.png" alt="Obra Diosa de Nieve">
+</section>
+
+<section class="intro-arte">
+  <p>
+    Quería representar una figura femenina que fuera la montaña, una guardiana de los páramos y los nevados.
+  </p>
+  <p>
+    Mientras escribía fui reuniendo elementos que habían marcado la experiencia del viaje. El cetro surge de un frailejón que fotografiamos durante la travesía.
+  </p>
+</section>
+<section class="obra-foto">
+  <img src="imagenes arte/frailejon.jpg" alt="Nevado del Tolima">
+</section>
+<section class="intro-arte">
+  <p>
+    La montaña que sostiene el cuerpo proviene de una imagen del propio Nevado del Tolima. También recopilé referencias de figuras humanas, rostros y símbolos asociados a la luna para construir una presencia que se sintiera antigua, serena y poderosa.
+  </p>
+  <p>
+    La obra fue creciendo como un collage de memorias, paisajes y búsquedas personales hasta convertirse en la representación visual de la diosa que habitó estas páginas durante la escritura.
+  </p>
+</section>
+<section class="galeria-documental finales">
+  <img src="imagenes arte/cuerpo.jpg" alt="Cuerpo de la Diosa de Nieve">
+  <img src="imagenes arte/rostro.jpg" alt="Rostro de la Diosa de Nieve">
+</section>
+<section class="intro-arte">
+  <h2>Proceso digital</h2>
+
+  <p>
+    A diferencia de otras obras realizadas mediante dibujo, tinta o grabado, esta pieza fue creada completamente en formato digital. La composición surgió uniendo fragmentos, modificando formas y construyendo una imagen nueva a partir de múltiples referencias.
+  </p>
+
+  <p>
+    Diosa de Nieve es una interpretación visual del Nevado del Tolima como madre ancestral y refugio espiritual.
+  </p>
+</section>
+
+<div class="section-title">
+  MÁS ARTE EN MOVIMIENTO
+</div>
 <section class="section">
-  <div class="section-title">COLECCIÓN</div>
   <div class="grid-arte">
 
     <a href="transformacion.html" class="art-card">
@@ -475,16 +531,8 @@ a {
 
 <div class="spacer"></div>
 
-<!-- CIERRE -->
-<section class="cierre-arte">
-  El arte mantiene viva el alma de Vivir en Cicla
-</section>
-<!-- FOOTER  -->
-
 <footer class="footer">
-
   <div class="footer-grid">
-
     <div class="footer-brand">
       <h3>Vivir en Cicla</h3>
       <p>
@@ -494,7 +542,6 @@ a {
 
     <div class="footer-nav">
       <h4>Explorar</h4>
-
       <a href="cronicas.html">Crónicas</a>
       <a href="arte.html">Arte</a>
       <a href="nosotros.html">Nosotros</a>
@@ -504,7 +551,6 @@ a {
 
     <div class="footer-social">
       <h4>Redes</h4>
-
       <a href="https://www.instagram.com/vivirencicla/">Instagram</a>
       <a href="https://www.youtube.com/@vivirencicla">YouTube</a>
       <a href="https://www.facebook.com/profile.php?id=61582653868742">Facebook</a>
@@ -514,7 +560,6 @@ a {
     </div>
 
     <div class="footer-newsletter">
-
       <h4>Novedades</h4>
 
       <p>
@@ -525,16 +570,14 @@ a {
         <input type="email" placeholder="vivirencicla@gmail.com">
         <button type="submit">Suscribirme</button>
       </form>
-
     </div>
-
   </div>
 
   <div class="footer-bottom">
     © 2026 Vivir en Cicla
   </div>
-
 </footer>
+
 <script src="header.js"></script>
 <script>
 function toggleMenu() {

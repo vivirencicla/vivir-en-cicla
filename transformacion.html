@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arte | Vivir en Cicla</title>
+<title>Transformación | Vivir en Cicla</title>
 
 <style>
 
@@ -134,13 +134,16 @@ body {
 ========================= */
 
 .intro-arte {
-  max-width: 750px;
-  margin: 120px auto;
-  padding: 0 20px;
-  font-size: 1.1rem;
-  opacity: 0.85;
-  text-align: left;
-  line-height: 1.8;
+  max-width: 850px;
+  margin: 180px auto;
+  padding: 0 25px;
+  font-size: 1.15rem;
+  opacity: 0.9;
+  line-height: 2;
+}
+
+.intro-arte p{
+  margin-bottom:40px;
 }
 
 /* =========================
@@ -162,22 +165,11 @@ body {
 /* GRID EDITORIAL */
 .grid-arte {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 30px;
-  max-width: 900px;
-  margin: auto;
-}
-
-/* jerarquía artística */
-.art-card:nth-child(1),
-.art-card:nth-child(2),
-.art-card:nth-child(3),
-.art-card:nth-child(4) {
-  grid-column: span 6;
-}
-
-.art-card:nth-child(n+5) {
-  grid-column: span 4;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 40px auto 0;
+  padding: 0 20px;
 }
 
 /* CARD */
@@ -300,21 +292,67 @@ a {
   position: relative;
   z-index: 2;
 }
+.obra-foto{
+  max-width: 1050px;
+  margin: 140px auto;
+  padding: 0 20px;
+}
+
+.obra-foto img{
+  width: 100%;
+  display: block;
+}
+
+.cita-obra{
+max-width:900px;
+margin:140px auto;
+padding:0 25px;
+text-align:center;
+font-size:2rem;
+line-height:1.7;
+font-style:italic;
+opacity:.75;
+}
+
+.galeria-documental{
+  max-width:1200px;
+  margin:120px auto;
+  padding:0 20px;
+
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+.galeria-documental img{
+width:100%;
+display:block;
+}
+
+@media(max-width:768px){
+
+.galeria-documental{
+grid-template-columns:1fr;
+}
+
+.cita-obra{
+font-size:1.4rem;
+}
+
+}
 /* FOOTER */
 .footer {
   background: #050505;
-  padding: 100px 30px 40px;
-  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 100px 0 40px;
+  width: 100%;
 }
 .footer-grid {
   max-width: 1200px;
-  margin: auto;
-
+  margin: 0 auto;
+  padding: 0 30px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 60px;
 }
-
 .footer h3 {
   margin-bottom: 15px;
   letter-spacing: 2px;
@@ -415,6 +453,19 @@ a {
   }
 
 }
+/* GALERÍA DE DOS FOTOS EN MÓVIL */
+@media (max-width: 768px) {
+
+  .galeria-documental {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .galeria-documental img {
+    height: auto;
+  }
+
+}
 </style>
 </head>
 
@@ -423,24 +474,133 @@ a {
 <!-- HERO ARTE -->
 <section class="hero-arte">
 
-  <img src="imagenes arte/eclipsearte.png" class="hero-bg">
+  <img src="imagenes arte/mariposadontra.jpg" class="hero-bg">
 
   <div class="hero-overlay"></div>
 
 <div class="hero-content">
-    <h1>ARTE</h1>
-    <p>Linóleo y Serigrafía</p>Curando las formas del paisaje</p>
+    <h1>Transformación</h1>
+    <p>Linóleo y Serigrafía</p>
   </div>
 </section>
 <!-- INTRO -->
 <section class="intro-arte">
-  El camino también se transforma en imágenes.<br>
-  Esta sección reúne las ilustraciones, grabados y experimentos visuales <br>
-  inspirados en los paisajes, las personas y los encuentros que dan vida a cada viaje.
+
+<p>
+Transformación nació durante un periodo de cuestionamientos profundos sobre la forma en que habitaba mi cuerpo, mis relaciones y los territorios que recorría.
+</p>
+
+<p>
+Mientras escribía uno de los capítulos más personales de mi libro, comenzó a aparecer una imagen recurrente: una mujer en posición fetal abrazada por raíces.
+</p>
+
+<p>
+Era una metáfora que regresaba una y otra vez, como una invitación a volver a la tierra para recordar quiénes somos antes del miedo, antes de las expectativas y antes de las versiones de nosotros mismos que construimos para adaptarnos.
+</p>
+
+<p>
+Durante aquellos meses entendí que antes de cualquier cambio visible existe un proceso silencioso, oculto bajo la superficie, parecido al crecimiento de las raíces que sostienen un árbol.
+</p>
+
+<p>
+La obra comenzó entonces como una búsqueda visual para representar ese movimiento interno: el miedo, la pérdida, la memoria, el renacimiento y la posibilidad de crear un nuevo lugar en el mundo.
+</p>
+
 </section>
-<!-- COLECCIÓN -->
+<section class="obra-foto">
+
+<img src="imagenes arte/transformacion.jpg">
+
+</section>
+<section class="intro-arte">
+
+<h2>El origen</h2>
+
+<p>
+La obra comenzó con una pregunta:
+¿cómo representar visualmente un proceso de transformación?.
+</p>
+
+<p>
+Durante algunas semanas reuní referencias de árboles de la vida, grabados y siluetas humanas.
+</p>
+
+<p>
+Algunas ideas surgieron de dibujos que ya hacian parte de mi, como el tatuaje de mariposa que llevo en la pierna; diseñada por el artísta colombiano Don Tradi. 
+</p>
+<p>
+Poco a poco todas esas piezas terminaron encontrándose en este todo.
+</p>
+
+</section>
+<section class="cita-obra">
+<p>
+“Sobre tu tallo yace la memoria de amantes y lágrimas de mujeres que murieron en la hoguera por la injusticia que no cesa en esta podrida raza”
+</p>
+
+</section>
+<section class="galeria-documental">
+
+<img src="imagenes arte/boceto1.jpg">
+<img src="imagenes arte/boceto2.jpg">
+</section>
+
+<section class="intro-arte">
+
+<h2>Primeras líneas</h2>
+
+<p>
+La primera versión apareció en un cuaderno durante las jornadas de escritura.
+</p>
+
+<p>
+Buscaba representar la relación entre el crecimiento visible y todo aquello que ocurre bajo la superficie.
+</p>
+
+<section class="obra-foto">
+
+<img src="imagenes arte/tinta.jpg">
+
+</section>
+
+<section class="intro-arte">
+<p>
+Después del dibujo inicial comencé a trabajar los detalles con tinta.
+</p>
+
+<p>
+Las ramas y raíces fueron creciendo casi de manera intuitiva.
+</p>
+</section>
+<section class="galeria-documental">
+
+<img src="imagenes arte/talla0.jpg">
+<img src="imagenes arte/talla1.jpg">
+</section>
+<section class="intro-arte">
+  <p>
+  La ilustración fue transferida a una placa de linóleo y tallada manualmente con gubias.
+  </p>
+  <p>
+   Este proceso exige paciencia: cada línea que se retira es irreversible. 
+   En muchos sentidos, el grabado refleja la misma idea de transformación presente en la obra; 
+   para revelar una imagen es necesario quitar materia.
+</p>
+</section>
+<section class="obra-foto">
+<img src="imagenes arte/linoleo.jpg">
+</section>
+<section class="intro-arte">
+  <p>
+La matriz fue impresa manualmente sobre tela utilizando tinta acrilica con gliserina líquida para el grabado. 
+  </p>
+Cada estampación es ligeramente distinta y conserva las huellas del proceso artesanal.
+Finalmente la obra fue digitalizada para explorar nuevas posibilidades de reproducción y adaptarla a diferentes formatos.
+</section>
+<div class="section-title">
+  MÁS ARTE EN MOVIMIENTO
+</div>
 <section class="section">
-  <div class="section-title">COLECCIÓN</div>
   <div class="grid-arte">
 
     <a href="transformacion.html" class="art-card">
@@ -473,16 +633,7 @@ a {
   </div>
 </section>
 
-<div class="spacer"></div>
-
-<!-- CIERRE -->
-<section class="cierre-arte">
-  El arte mantiene viva el alma de Vivir en Cicla
-</section>
-<!-- FOOTER  -->
-
 <footer class="footer">
-
   <div class="footer-grid">
 
     <div class="footer-brand">
