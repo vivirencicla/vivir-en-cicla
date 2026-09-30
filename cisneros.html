@@ -343,9 +343,10 @@
   }
 }
   </style>
+  <link rel="stylesheet" href="objetos.css">
 </head>
 
-<body>
+<body class="fondo-claro-cronica">
     <div id="header-container"></div>
   <!-- HERO -->
 <section class="hero">
@@ -529,6 +530,25 @@ Nos invitó a conocer el proceso.
   </section>
   <!-- FOOTER  -->
 
+
+<section class="objetos-section" id="objetos" aria-labelledby="objetos-title">
+  <div id="objetos-listado">
+    <div class="objetos-heading">
+      <p class="objetos-kicker">Arte · Autogestión · Hecho por ciclistas</p>
+      <h2 id="objetos-title">Gráfica para llevar</h2>
+<p class="objetos-note">Con tu compra ayudas a sostener este proyecto.</p>    </div>
+    <nav class="objetos-filters" aria-label="Filtrar objetos">
+      <button class="objetos-filter" type="button" data-filter="todos" aria-pressed="true">Todos</button>
+      <button class="objetos-filter" type="button" data-filter="camisetas" aria-pressed="false">Camisetas</button>
+      <button class="objetos-filter" type="button" data-filter="carteles" aria-pressed="false">Carteles</button>
+      <button class="objetos-filter" type="button" data-filter="tote-bags" aria-pressed="false">Tote bags</button>
+      <button class="objetos-filter" type="button" data-filter="cuadros" aria-pressed="false">Cuadros</button>
+    </nav>
+    <div class="objetos-grid" id="objetos-grid" aria-live="polite"></div>
+  </div>
+  <article class="objeto-detail" id="objeto-detail" hidden aria-live="polite"></article>
+</section>
+
 <footer class="footer">
 
   <div class="footer-grid">
@@ -603,5 +623,6 @@ const observer = new IntersectionObserver((entries) => {
 });
 elements.forEach(el => observer.observe(el));
 </script>
+  <script src="objetos.js" defer></script>
 </body>
 </html>

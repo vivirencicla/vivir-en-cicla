@@ -373,7 +373,87 @@ body {
   }
 
 }
+
+/* OBJETOS QUE HACEN CAMINO */
+.objetos-section {
+  max-width: 1280px;
+  margin: 40px auto 100px;
+  padding: 90px 30px;
+  color: #efe7da;
+}
+.objetos-heading { max-width: 760px; margin-bottom: 34px; }
+.objetos-kicker, .objeto-meta, .objeto-detail-meta { color: rgba(239,231,218,.68); font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; }
+.objetos-heading h2 { margin: 12px 0; font-size: clamp(2.3rem, 5vw, 4.5rem); line-height: .98; font-weight: 500; }
+.objetos-heading p { max-width: 620px; font-size: 1.08rem; color: rgba(239,231,218,.8); }
+.objetos-note { margin-top: 18px; max-width: 650px; font-size: .86rem; color: rgba(239,231,218,.58); }
+.objetos-filters { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 42px 0 28px; border-bottom: 1px solid rgba(239,231,218,.2); }
+.objetos-filter { border: 0; border-bottom: 1px solid transparent; padding: 10px 0 12px; background: transparent; color: rgba(239,231,218,.65); font: inherit; font-size: .86rem; cursor: pointer; }
+.objetos-filter:hover, .objetos-filter[aria-pressed="true"] { color: #efe7da; border-color: #efe7da; }
+.objetos-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); grid-auto-flow: dense; gap: 36px 22px; align-items: start; }
+.objeto-card { display: block; min-width: 0; color: inherit; text-decoration: none; }
+.objeto-card:nth-child(6n + 1) { grid-row: span 2; }
+.objeto-card:nth-child(6n + 4) { margin-top: 44px; }
+.objeto-image { display: block; width: 100%; aspect-ratio: 4 / 5; overflow: hidden; background: #191816; }
+.objeto-card:nth-child(6n + 1) .objeto-image { aspect-ratio: 4 / 5.8; }
+.objeto-image img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .55s ease; }
+.objeto-card:hover .objeto-image img, .objeto-card:focus-visible .objeto-image img { transform: scale(1.025); }
+.objeto-image-pendiente { min-height: 200px; display: grid; place-items: center; padding: 24px; color: rgba(239,231,218,.6); text-align: center; font-size: .8rem; letter-spacing: .04em; background: linear-gradient(145deg,#23211e,#141312); }
+.objeto-card-copy { display: flex; justify-content: space-between; gap: 12px; align-items: start; padding-top: 13px; }
+.objeto-card-copy h3 { margin: 3px 0 0; font-size: 1.08rem; font-weight: 500; }
+.objeto-price { white-space: nowrap; font-size: .83rem; color: rgba(239,231,218,.72); }
+.objetos-empty { grid-column: 1/-1; padding: 32px 0; color: rgba(239,231,218,.65); }
+.objeto-detail { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(280px,.8fr); gap: clamp(28px,6vw,90px); margin-top: 38px; }
+.objeto-detail[hidden] { display: none; }
+.objeto-detail-gallery { display: grid; gap: 12px; align-content: start; }
+.objeto-detail-gallery img { display: block; width: 100%; height: auto; }
+.objeto-detail-main { display: grid; place-items: center; min-height: 420px; }
+.objeto-detail-copy { padding-top: 6px; }
+.objeto-detail-copy h3 { font-size: clamp(2rem,4vw,3.5rem); line-height: 1; font-weight: 500; margin: 12px 0 18px; }
+.objeto-detail-copy p { color: rgba(239,231,218,.8); line-height: 1.75; margin: 16px 0; }
+.objeto-detail-list { list-style: none; padding: 18px 0; margin: 20px 0; border-top: 1px solid rgba(239,231,218,.2); border-bottom: 1px solid rgba(239,231,218,.2); }
+.objeto-detail-list li { display: flex; justify-content: space-between; gap: 20px; padding: 7px 0; font-size: .9rem; }
+.objeto-detail-list span:first-child { color: rgba(239,231,218,.58); }
+.objeto-contact, .objeto-back { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 17px; border: 1px solid rgba(239,231,218,.55); color: #efe7da; text-decoration: none; background: transparent; font: inherit; font-size: .9rem; cursor: pointer; }
+.objeto-contact:hover, .objeto-back:hover { background: #efe7da; color: #111; }
+.objeto-back { margin-bottom: 20px; }
+.objeto-contact { background: #25D366; border-color: #25D366; color: #102217; font-weight: 600; }
+.objeto-contact:hover { background: #1ebe5b; border-color: #1ebe5b; color: #102217; }
+.objeto-delivery { flex-direction: column; gap: 6px !important; }
+.objeto-delivery-copy { color: rgba(239,231,218,.8); font-size: .88rem; line-height: 1.7; }
+.objeto-delivery-copy p { margin: 5px 0 !important; }
+.objeto-detail-copy blockquote { margin: 20px 0; padding-left: 16px; border-left: 2px solid rgba(239,231,218,.55); color: rgba(239,231,218,.9); line-height: 1.7; }
+.objeto-detail-extra { aspect-ratio: 4 / 5; }
+
+
+.objeto-presentacion { margin: 22px 0 12px; }
+.objeto-presentacion-label { margin: 0 0 10px !important; font-size: .9rem; color: rgba(239,231,218,.72); }
+.objeto-presentacion-options { display: flex; flex-wrap: wrap; gap: 10px; }
+.objeto-presentacion-option { min-height: 42px; padding: 9px 14px; border: 1px solid rgba(239,231,218,.4); color: #efe7da; background: transparent; font: inherit; font-size: .88rem; cursor: pointer; }
+.objeto-presentacion-option:hover, .objeto-presentacion-option[aria-pressed="true"] { background: #efe7da; color: #111; border-color: #efe7da; }
+
+@media (max-width: 900px) {
+  .objetos-section { padding: 72px 24px; }
+  .objetos-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 30px 18px; }
+  .objeto-card:nth-child(6n + 1) { grid-row: auto; }
+  .objeto-card:nth-child(6n + 4) { margin-top: 0; }
+  .objeto-card:nth-child(4n + 1) .objeto-image { aspect-ratio: 4 / 5.3; }
+}
+@media (max-width: 600px) {
+  .objetos-section { margin-top: 0; padding: 64px 20px; }
+  .objetos-heading h2 { font-size: 2.65rem; }
+  .objetos-heading p { font-size: 1rem; }
+  .objetos-filters { gap: 2px 16px; margin-top: 30px; }
+  .objetos-filter { font-size: .78rem; padding: 9px 0; }
+  .objetos-grid { grid-template-columns: 1fr; gap: 28px; }
+  .objeto-card:nth-child(n) .objeto-image { aspect-ratio: 4 / 4.7; }
+  .objeto-card-copy h3 { font-size: 1rem; }
+  .objeto-detail { grid-template-columns: 1fr; }
+  .objeto-detail-main { min-height: 320px; }
+  .objeto-detail-copy h3 { font-size: 2.4rem; }
+}
+
 </style>
+  <link rel="stylesheet" href="objetos.css">
 </head>
 
 <body>
@@ -384,15 +464,15 @@ body {
 
   <div class="hero-content">
     <h1>Comunidad</h1>
-    <p>Detrás de cada viaje hay una comunidad que nos acompaña</p>
+    <p>Detrás de cada kilómetro hay personas que nos acompañan</p>
   </div>
 </section>
 
 <section class="cta">
-  <h2>¿Quieres ser parte del camino?</h2>
+  <h2>TODO PEDALAZO CUENTA</h2>
 
   <p>
-    Tu aporte nos ayuda a seguir pedaleando, documentando historias y construyendo comunidad a través del territorio.
+      Tu aporte nos permite seguir en movimiento, creando y documentando el mundo desde la bici.
   </p>
 
   <div class="cta-buttons">
@@ -407,6 +487,27 @@ body {
 
   </div>
 </section>
+<!-- ARCHIVO DE OBJETOS -->
+<section class="objetos-section" id="objetos" aria-labelledby="objetos-title">
+  <div id="objetos-listado">
+    <div class="objetos-heading">
+      <p class="objetos-kicker">Arte · Autogestión · Hecho por ciclistas</p>
+      <h2 id="objetos-title">Gráfica para llevar</h2>
+<p class="objetos-note">Con tu compra ayudas a sostener este proyecto.</p>    </div>
+
+    <nav class="objetos-filters" aria-label="Filtrar objetos">
+      <button class="objetos-filter" type="button" data-filter="todos" aria-pressed="true">Todos</button>
+      <button class="objetos-filter" type="button" data-filter="camisetas" aria-pressed="false">Camisetas</button>
+      <button class="objetos-filter" type="button" data-filter="carteles" aria-pressed="false">Carteles</button>
+      <button class="objetos-filter" type="button" data-filter="tote-bags" aria-pressed="false">Tote bags</button>
+      <button class="objetos-filter" type="button" data-filter="cuadros" aria-pressed="false">Cuadros</button>
+    </nav>
+    <div class="objetos-grid" id="objetos-grid" aria-live="polite"></div>
+  </div>
+  <article class="objeto-detail" id="objeto-detail" hidden aria-live="polite"></article>
+</section>
+
+  
 <!-- RED VIVA -->
 <section class="section">
   <h2>Red viva</h2>
@@ -447,7 +548,8 @@ body {
     que sostienen algo más grande que nosotros.
   </p>
 </section>
-  <!-- FOOTER  -->
+
+<!-- FOOTER  -->
 
 <footer class="footer">
 
@@ -510,5 +612,308 @@ function toggleMenu() {
   document.getElementById("navMenu").classList.toggle("active");
 }
 </script>
+
+<script type="application/json" id="vic-product-data">
+[
+  {
+    "id": "Cuadros",
+    "name": "Obra Ballena · Naranja",
+    "category": "cuadros",
+    "categoryLabel": "Cuadros en madera",
+    "technique": "Grabado en linóleo",
+    "image": "imagenes arte/ballena naranja muck.jpg",
+    "extraImages": [
+      "imagenes arte/ballena naranja.jpg"
+    ],
+    "description": "**Sankofa · Ballena**\nGrabado en linóleo que reúne la figura de una ballena negra con una composición de formas geométricas inspiradas en el **Sankofa**, un símbolo de origen africano que representa la idea de volver al pasado para recuperar aquello que puede ayudarnos a construir el presente y el futuro.\n\nLa ballena aparece como una figura de sabiduría y conexión. Su vida en comunidad, sus formas de comunicación y su relación con el océano inspiraron esta obra. \n\nLas formas que rodean la ballena construyen un paisaje fragmentado similar a un mosaico, en el que cada elemento encuentra su lugar alrededor de esta. El fondo naranja intensifica el contraste con el negro y le da a la pieza una presencia cálida y contundente.\n\nLa obra fue realizada mediante grabado en linóleo con solo 20 unidades en existencia. Cada pieza tiene detalles únicos y se entrega marcada y firmada con su número de impresión.\n\n> *Tu compra hace posible nuestro viaje pedaleando por Sudamérica.*",
+    "materials": "Marco de madera · Papel maule 180 g",
+    "dimensions": "25 × 34 cm",
+    "price": {
+      "sinMarco": 29900,
+      "conMarco": 59900
+    },
+    "presentationOptions": true,
+    "availability": null,
+    "colors": null,
+    "sizes": null,
+    "shirtType": null,
+    "production": "La web documenta la talla manual de la matriz y la impresión de pósteres.",
+    "delivery": "Todas nuestras piezas son realizadas mediante **procesos artesanales e impresión manual**, por lo que cada una requiere tiempo de elaboración y cuidado.\n\nRealizamos envíos en **Medellín y el Área Metropolitana**, y a **cualquier ciudad de Colombia**.\n\nEl tiempo de entrega es de **hasta 8 días hábiles** después de confirmar la compra. Este tiempo nos permite preparar cada grabado cuidadosamente antes de enviarlo."
+  },
+  {
+    "id": "camiseta-diseno-1",
+    "name": "Volar",
+    "category": "camisetas",
+    "categoryLabel": "Camisetas",
+    "technique": "Serigrafía artesanal",
+    "image": "imagenes arte/Volar sin fondo muckup.png",
+    "extraImages": [
+      "imagenes arte/Volar blanco 2.jpg",
+      "imagenes arte/volar azul.jpg",
+      "imagenes arte/volar blanco.jpg",
+      "imagenes arte/volar limon.jpg",
+      "imagenes arte/muestra colores volar.jpeg",
+      "imagenes arte/volar detalle 2 .jpeg"
+    ],
+"description": "Volar explora las transformaciones que atravesamos a lo largo de la vida y la manera en que estas se reflejan en nuestra forma de habitar el cuerpo.\n\nLa imagen de una mujer en posición fetal, entre raíces, apareció mientras escribía uno de los capítulos más personales de mi libro. A partir de ella comenzó una experimentación gráfica alrededor del miedo, la transformación y el renacimiento: volver a la tierra, profundizar en nuestras raíces y encontrar allí la fuerza para abrir las alas.\n\nVolar es una invitación a confiar en el movimiento y atrevernos a ir hacia aquello que deseamos.\n\nLa ilustración fue llevada a **serigrafía artesanal**, convirtiéndose en una pieza para vestir y llevar con nosotros.\n\n> *Tu compra hace posible nuestro viaje pedaleando por Sudamérica.*",
+    "materials": "100% algodón",
+    "price": 60000,
+    "availability": "Disponible",
+    "colors": " Verde claro · Azul claro · Blanco· Beige",
+    "sizes": "XS · S · M · L · XL",
+    "shirtType": "De hombre",
+    "delivery": "Todas nuestras prendas son realizadas mediante **procesos artesanales e impresión manual**, por lo que cada una requiere tiempo de elaboración y cuidado.\n\nRealizamos envíos en **Medellín y el Área Metropolitana**, y a **cualquier ciudad de Colombia**.\n\nEl tiempo de entrega es de **hasta 8 días hábiles** después de confirmar la compra. Este tiempo nos permite preparar cada pieza cuidadosamente antes de enviarla."
+  },
+  {
+    "id": "camiseta-diseno-2",
+    "name": "Mamá",
+    "category": "camisetas",
+    "categoryLabel": "Camisetas",
+    "technique": "Serigrafía artesanal",
+    "image": "imagenes arte/mama muckup fondo-pagina.png",
+    "extraImages": [
+      "imagenes arte/mama camila.jpg",
+      "imagenes arte/todas usando camiseta.jpg",
+      "imagenes arte/detalle mama 2.jpeg",
+      "imagenes arte/mama.jpg"
+    ],
+    "description": "La ilustración se crea a partir de una fotografía tomada de camino al trabajo, en bicicleta por la avenida 80 de Medellín. Entre el ruido de los buses, los carros y el tráfico, esta escena me obligó a detenerme: una madre pedaleando junto a su hijo. Había algo profundamente hermoso en la tranquilidad que compartían a pesar del entorno caótico que los rodeaba.\n\nCada vez que volvía a mirar la fotografía, encontraba en ella algo que me conmovía. Esta pieza reconoce la valentía de aquella mujer y la forma en que protegía el vínculo con su hijo mientras recorría la ciudad.\n\nLa imagen original se digitalizó: sus formas se simplificaron y se llevaron a una trama de semitonos, acercándola al lenguaje de la gráfica impresa.\n\n> *Tu compra hace posible nuestro viaje pedaleando por Sudamérica.*",
+    "materials": "100% algodón",
+    "price": 60000,
+    "availability": "Disponible",
+    "colors": "Beige",
+    "sizes": "XS · S · M · L · XL",
+    "shirtType": "De hombre",
+    "delivery": "Todas nuestras prendas son realizadas mediante **procesos artesanales e impresión manual**, por lo que cada una requiere tiempo de elaboración y cuidado.\n\nRealizamos envíos en **Medellín y el Área Metropolitana**, y a **cualquier ciudad de Colombia**.\n\nEl tiempo de entrega es de **hasta 8 días hábiles** después de confirmar la compra. Este tiempo nos permite preparar cada pieza cuidadosamente antes de enviarla."
+  },
+  {
+    "id": "camiseta-diseno-3",
+    "name": "No Más Ciclistas Muertxs",
+    "category": "camisetas",
+    "categoryLabel": "Camisetas",
+    "technique": "Serigrafía artesanal",
+    "image": "imagenes arte/vale 2 no mas ciclistas muertos.jpg",
+    "extraImages": [
+      "imagenes arte/no mas ciclistas muertos muestra.jpg",
+      "imagenes arte/no mas ciclistas muertxs muckup insta.jpg",
+      "imagenes arte/FOTO ORIGINAL NO MAS CICLISTAS MUERTXS.jpg",
+      "imagenes arte/protesta.jpg"
+    ],
+    "description": "Esta pieza gráfica de denuncia, fue realizada cinco años después del asesinato de un ciclista en Medellín.\n\nLa obra parte de una experiencia compartida por quienes se mueven en bicicleta por la ciudad: la vulnerabilidad frente al tráfico y la necesidad de exigir respeto por la vida. La imagen original fue intervenida digitalmente para hablar de la fragilidad del cuerpo y de una comunidad que se niega a normalizar la violencia en las vías.\n\nEl mensaje en la camiseta, honra la memoria de quienes ya no pueden seguir rodando.",
+    "materials": "100% algodón",
+    "price": 60000,
+    "availability":  "Disponible",
+    "colors": " Negro · Blanco· Azul Claro",
+    "sizes": "XS · S · M · L · XL",
+    "shirtType": "De hombre",
+    "delivery": "Todas nuestras prendas son realizadas mediante **procesos artesanales e impresión manual**, por lo que cada una requiere tiempo de elaboración y cuidado.\n\nRealizamos envíos en **Medellín y el Área Metropolitana**, y a **cualquier ciudad de Colombia**.\n\nEl tiempo de entrega es de **hasta 8 días hábiles** después de confirmar la compra. Este tiempo nos permite preparar cada pieza cuidadosamente antes de enviarla."
+  },
+  {
+    "id": "camiseta-diseno-4",
+    "name": "Diosa de Nieve",
+    "category": "camisetas",
+    "categoryLabel": "Camisetas",
+    "technique": "Serigrafía artesanal",
+    "image": "imagenes arte/muckup diosa de nieve insta.jpg",
+    "extraImages": [
+      "imagenes arte/diosa de nieve principal.jpg",
+      "imagenes arte/vale con diosa de nieve.jpg",
+      "imagenes arte/preceso diosa de nieve.jpg"
+    ],
+    "description": "**Diosa de Nieve** surge durante la escritura de la bitácora de una travesía al Nevado del Tolima. Durante esos días, la montaña dejó de ser un paisaje aislado y se convirtió en una presencia viva: una fuerza antigua que nos habla de resistencia y de la necesidad de preservarse.\n\nLa ilustración imagina una figura femenina como guardiana de la naturaleza. Reúne un frailejón que inspira su cetro, la montaña es una fotografía real del Nevado del Tolima y referencias humanas, lunares y simbólicas.\n\n> *Tu compra hace posible nuestro viaje pedaleando por Sudamérica.*",
+    "materials": "100% algodón",
+    "price": 60000,
+    "availability":  "Disponible",
+    "colors": " Negro",
+    "sizes": "XS · S · M · L · XL",
+    "shirtType": "De hombre",
+    "delivery": "Todas nuestras prendas son realizadas mediante **procesos artesanales e impresión manual**, por lo que cada una requiere tiempo de elaboración y cuidado.\n\nRealizamos envíos en **Medellín y el Área Metropolitana**, y a **cualquier ciudad de Colombia**.\n\nEl tiempo de entrega es de **hasta 8 días hábiles** después de confirmar la compra. Este tiempo nos permite preparar cada pieza cuidadosamente antes de enviarla."
+  },
+  {
+    "id": "cartel-volar",
+    "name": "Cartel · Volar",
+    "category": "carteles",
+    "categoryLabel": "Cartel",
+    "technique": "Ilustración gráfica",
+    "image": "imagenes arte/poster volar marco 2.jpg",
+    "extraImages": [
+      "imagenes arte/volar afiches.jpg",
+      "imagenes arte/poster volar marco morado.jpg",
+      "imagenes arte/poster volar marco azul.jpg"
+    ],
+    "description": "Volar habla de transformación, de soltar aquello que nos ata y permitirnos cambiar de forma. Las raíces representan la memoria, el origen y todo aquello que nos sostiene. De ellas emerge una mujer que atraviesa su propio proceso, entre lo que ha sido y lo que está por convertirse.\n\nLa mariposa aparece como símbolo de libertad y la posibilidad de volar para encontrar nuevas formas de habitar el cuerpo y el mundo.\n\n> *Tu compra hace posible nuestro viaje pedaleando por Sudamérica.*",
+    "materials": "Papel Maule 200 g",
+    "colors": "Fondo blanco · Azul · Morado",
+    "dimensions": "30 × 40 cm",
+    "price": {
+      "sinMarco": 20900,
+      "conMarco": 69900
+    },
+    "availability": "Disponible",
+    "delivery": "Todos nuestros carteles son realizados mediante **procesos artesanales e impresión manual**, por lo que cada uno requiere tiempo de elaboración y cuidado.\n\nRealizamos envíos en **Medellín y el Área Metropolitana**, y a **cualquier ciudad de Colombia**.\n\nEl tiempo de entrega es de **hasta 8 días hábiles** después de confirmar la compra. Este tiempo nos permite preparar cada pieza cuidadosamente antes de enviarla.",
+    "presentationOptions": true
+  },
+  {
+    "id": "cartel-diosa-nieve",
+    "name": "Cartel · Diosa de Nieve",
+    "category": "carteles",
+    "categoryLabel": "Cartel",
+    "technique": "Ilustración gráfica",
+    "image": "imagenes arte/afiche diosa de nieve.jpg",
+    "extraImages": [
+      "imagenes arte/diosa de nieve poster cuadro.jpg"
+    ],
+    "description": "Diosa de Nieve explora la relación entre el cuerpo femenino y la naturaleza del Nevado del Tolima. El frailejón aparece como símbolo de resistencia y protección.\n\nLa obra propone mirar la montaña como una fuerza viva de la que hacemos parte. Una invitación a reconocer y cuidar aquello que nos permite existir.\n\n> *Tu compra hace posible nuestro viaje pedaleando por Sudamérica.*",
+    "materials": "Papel Maule 200 g",
+        "colors": "Fondo blanco · Negro · Crema",
+    "dimensions": "30 × 40 cm",
+    "price": {
+      "sinMarco": 20900,
+      "conMarco": 69900
+    },
+    "availability": "Disponible",
+    "delivery": "Todos nuestros carteles son realizados mediante **procesos artesanales e impresión manual**, por lo que cada uno requiere tiempo de elaboración y cuidado.\n\nRealizamos envíos en **Medellín y el Área Metropolitana**, y a **cualquier ciudad de Colombia**.\n\nEl tiempo de entrega es de **hasta 8 días hábiles** después de confirmar la compra. Este tiempo nos permite preparar cada pieza cuidadosamente antes de enviarla.",
+    "presentationOptions": true
+  },
+  {
+    "id": "cartel-mama",
+    "name": "Cartel · Mamá",
+    "category": "carteles",
+    "categoryLabel": "Cartel",
+    "technique": "Gráfica impresa",
+    "image": "imagenes arte/mama con cuadro.jpg",
+    "extraImages": [
+      "imagenes arte/afiche mama.jpg",
+      "imagenes arte/poster mama con marco.jpg"
+    ],
+    "description": "Mamá en bici retrata a una madre y su hijo recorriendo una avenida de Medellín en bicicleta, entre el tráfico y el ruido cotidiano.\n\nEsta obra habla sobre la maternidad y pone en contraste el cuidado y el peligro que atraviesan quienes se mueven en bicicleta por la ciudad. Una escena que nos recuerda que otras formas de habitar y recorrer el espacio urbano son posibles.\n\n> *Tu compra hace posible nuestro viaje pedaleando por Sudamérica.*",
+    "materials": "Papel Maule 200 g",
+    "colors": "Fondo blanco · Morado",
+    "dimensions": "30 × 40 cm",
+    "price": {
+      "sinMarco": 20900,
+      "conMarco": 69900
+    },
+    "availability": "Disponible",
+    "delivery": "Todos nuestros carteles son realizados mediante **procesos artesanales e impresión manual**, por lo que cada uno requiere tiempo de elaboración y cuidado.\n\nRealizamos envíos en **Medellín y el Área Metropolitana**, y a **cualquier ciudad de Colombia**.\n\nEl tiempo de entrega es de **hasta 8 días hábiles** después de confirmar la compra. Este tiempo nos permite preparar cada pieza cuidadosamente antes de enviarla.",
+    "presentationOptions": true
+  },
+  {
+    "id": "cartel-nomas-ciclistasmuertos",
+    "name": "Cartel · No Más Ciclistas Muertxs",
+    "category": "carteles",
+    "categoryLabel": "Cartel",
+    "technique": "Ilustración gráfica",
+    "image": "imagenes arte/afiche no mas ciclistas muertxs.jpg",
+    "extraImages": [
+      "imagenes arte/no mas muertos cuadro poster.jpg"
+    ],
+    "description": "No más ciclistas muertxs es una obra de memoria y denuncia frente a las vidas que se han perdido en las calles por la falta de tolerancia y cultura de respeto hacía los ciclistas. La obra busca mantener presentes sus nombres, sus historias y la responsabilidad colectiva de construir ciudades donde pedalear no signifique arriesgar la vida.\n\n Este diseño fue realizado por Vivir en Cicla y donado al colectivo SiCLas para apoyar el activismo que han hecho durante años, promoviendo el uso de la bicicleta y exigiendo seguridad en las vías de la ciudad.\n\n> *Tu compra hace posible nuestro viaje pedaleando por Sudamérica.*",
+    "materials": "Papel Maule 200 g",
+    "colors": "Fondo blanco · Amarillo",
+    "dimensions": "30 × 40 cm",
+    "price": {
+      "sinMarco": 20900,
+      "conMarco": 69900
+    },
+    "availability": "Disponible",
+    "delivery": "Todos nuestros carteles son realizados mediante **procesos artesanales e impresión manual**, por lo que cada uno requiere tiempo de elaboración y cuidado.\n\nRealizamos envíos en **Medellín y el Área Metropolitana**, y a **cualquier ciudad de Colombia**.\n\nEl tiempo de entrega es de **hasta 8 días hábiles** después de confirmar la compra. Este tiempo nos permite preparar cada grabado cuidadosamente antes de enviarlo.",
+    "presentationOptions": true
+    },
+  {
+    "id": "tote-bag-vivir-en-cicla",
+    "name": "Tote Volar · Blanca",
+    "category": "tote-bags",
+    "categoryLabel": "Tote bag blanca",
+    "technique": "Gráfica impresa",
+    "image": "imagenes arte/muckup tote blanca.png",
+    "extraImages": [],
+    "description": "Las raíces hablan de aquello que nos sostiene y la memoria de los lugares que nos habitan. La mariposa representa la transformación y la posibilidad de desprendernos de aquello que ya no necesitamos para encontrar otras formas de existir.\n\n*Volar* nace de esa tensión entre permanecer y transformarse: tener raíces no significa estar quietos.\n\nEsta ilustración llega a una tote bag para acompañar el movimiento del día a día y llevar contigo una imagen que habla de cambio, libertad y transformación.\n\n> *Tu compra hace posible nuestro viaje pedaleando por Sudamérica.*",
+    "materials": "Lona de algodón",
+    "dimensions": "38 × 42 cm · Asas de 65 cm aprox.",
+    "price": 35000,
+    "availability": "Disponible",
+    "delivery": "Todas nuestras Tote son hechas mediante **procesos artesanales e impresión manual**, por lo que cada una requiere tiempo de elaboración y cuidado.\n\nRealizamos envíos en **Medellín y el Área Metropolitana**, y a **cualquier ciudad de Colombia**.\n\nEl tiempo de entrega es de **hasta 8 días hábiles** después de confirmar la compra. Este tiempo nos permite preparar cada Tote cuidadosamente antes de enviarla."
+  },
+  {
+    "id": "tote-bag-volar-negra",
+    "name": "Tote Volar · Negra",
+    "category": "tote-bags",
+    "categoryLabel": "Tote bag negra",
+    "technique": "Gráfica impresa",
+    "image": "imagenes arte/muckup tote negra.png",
+    "extraImages": [],
+    "description": "Las raíces hablan de aquello que nos sostiene y la memoria de los lugares que nos habitan. La mariposa representa la transformación y la posibilidad de desprendernos de aquello que ya no necesitamos para encontrar otras formas de existir.\n\n*Volar* nace de esa tensión entre permanecer y transformarse: tener raíces no significa estar quietos.\n\nEsta ilustración llega a una tote bag para acompañar el movimiento del día a día y llevar contigo una imagen que habla de cambio, libertad y transformación.\n\n> *Tu compra hace posible nuestro viaje pedaleando por Sudamérica.*",
+    "materials": "Lona de algodón",
+    "dimensions": "38 × 42 cm · Asas de 65 cm aprox.",
+    "price": 35000,
+    "availability": "Disponible",
+    "delivery": "Todas nuestras Tote son hechas mediante **procesos artesanales e impresión manual**, por lo que cada una requiere tiempo de elaboración y cuidado.\n\nRealizamos envíos en **Medellín y el Área Metropolitana**, y a **cualquier ciudad de Colombia**.\n\nEl tiempo de entrega es de **hasta 8 días hábiles** después de confirmar la compra. Este tiempo nos permite preparar cada Tote cuidadosamente antes de enviarla."
+  },
+  {
+    "id": "proceso-linoleo",
+    "name": "Proceso de grabado en linóleo",
+    "category": "linoleo",
+    "categoryLabel": "Proceso · Linóleo",
+    "technique": "Grabado e impresión manual",
+    "image": "imagenes procesos/herramientas linoleo.jpeg",
+    "extraImages": [
+      "imagenes procesos/linoleo.jpeg"
+    ],
+    "description": "El grabado en linóleo convierte una imagen en una matriz que se talla a mano. Esta primera narración parte de las fotografías disponibles: las herramientas de trabajo y algunos bloques ya tallados. La iremos completando cuando sumemos imágenes de las demás etapas.\n\n**1. Las herramientas**\nLas gubias permiten retirar pequeñas partes del linóleo y construir líneas, formas y texturas. Cada herramienta deja una huella distinta; elegirla también es decidir cómo aparecerá la imagen.\n\n**2. La matriz tallada**\nEn los bloques se alcanza a ver cómo la imagen toma forma en relieve. La talla define qué zonas recibirán la tinta y cuáles quedarán en blanco al imprimir. Cada matriz conserva las marcas y decisiones de quien la trabajó.\n\n**3. Una imagen hecha a mano**\nEstas fotografías muestran herramientas y matrices terminadas. Cuando incorporemos registros del dibujo, la talla y la impresión, podremos contar con más detalle el recorrido completo de cada grabado.",
+    "materials": null,
+    "dimensions": null,
+    "price": null,
+    "availability": null,
+    "isEditorial": true
+  },
+  {
+    "id": "proceso-serigrafia",
+    "name": "Proceso de serigrafía",
+    "category": "serigrafias",
+    "categoryLabel": "Proceso · Serigrafía",
+    "technique": "Impresión serigráfica",
+    "image": "imagenes procesos/seriagrafia mom.jpg",
+    "extraImages": [
+      "imagenes procesos/serigrafia tintas.jpg",
+      "imagenes procesos/preoceso serigrafia .jpg",
+      "imagenes procesos/serigrafia volar 2.jpg",
+      "imagenes procesos/marco de volar.jpeg",
+      "imagenes procesos/DSC00666.jpg",
+      "imagenes procesos/marcos sin revelar.jpeg"
+    ],
+    "description": "La serigrafía es un trabajo de atención y coordinación: la tinta pasa por una malla y, con cada pasada de la rasqueta, la imagen aparece sobre la superficie. Estas fotos cuentan una primera parte del proceso, desde el trabajo compartido en el taller hasta algunas impresiones terminadas.\n\n**1. Preparar la impresión**\nAntes de cada pasada se organiza el marco y se dispone la tinta. En el taller, cada persona aporta cuidado y precisión para que la imagen quede en su lugar.\n\n**2. La tinta y la rasqueta**\nLa tinta se distribuye sobre la malla y la rasqueta la empuja a través de las zonas abiertas del diseño. La presión y el movimiento hacen visible la imagen en cada impresión.\n\n**3. Repetir cada pasada**\nLa impresión se realiza a mano, una pieza a la vez. El gesto se repite con atención para mantener la imagen y dejar que cada estampa conserve pequeñas variaciones.\n\n**4. Las imágenes impresas**\nLos marcos y las piezas fotografiadas muestran algunos resultados de este trabajo: diseños como *Volar* y *No más ciclistas muertxs*. Esta narración es provisional; podremos ampliarla con nuevas fotos de la preparación de las pantallas y de las piezas recién impresas.",
+    "materials": null,
+    "dimensions": null,
+    "price": null,
+    "availability": null,
+    "isEditorial": true
+  },
+  {
+    "id": "cuadro-nombre-unico",
+    "name": "Juntos · Azul",
+    "category": "cuadros",
+    "categoryLabel": "Cuadros en madera",
+    "technique": "Grabado en linóleo",
+    "image": "imagenes arte/muckup juntos.jpg",
+    "extraImages": [
+      "imagenes arte/detalle juntos.jpg"
+    ],
+    "description": "**La obra Juntos** reúne una ballena y un pájaro en una composición formada alrededor del **Sankofa**, un símbolo de origen africano que nos recuerda que no está mal volver atrás para recuperar aquello que olvidamos o aquello que necesitamos para seguir avanzando.\n\nLa ballena aparece como una figura de sabiduría y conexión. Su vida en comunidad, sus formas de comunicación y su relación con el océano inspiraron esta obra. El pájaro representa otra manera de habitar el mundo: el aire, el movimiento y la posibilidad de contemplar el territorio desde distintas perspectivas.\n\nEl Sankofa une estos animales dentro de una misma composición. Sus formas construyen un lenguaje gráfico que conecta elementos diferentes y los reúne en torno a una misma idea: mirar hacia lo que hemos vivido para encontrar allí la fortaleza que nos permita seguir avanzando.\n\nLa obra fue realizada mediante grabado en linóleo con solo 20 unidades en existencia. Cada pieza tiene detalles únicos y se entrega marcada y firmada con su número de impresión.\n\n> *Tu compra hace posible nuestro viaje pedaleando por Sudamérica.*",
+    "materials": "Marco de madera · Papel maule 180 g",
+    "dimensions": "30 × 40 cm",
+    "price": {
+      "sinMarco": 29900,
+      "conMarco": 59900
+    },
+    "presentationOptions": true,
+    "availability": "Por confirmar",
+    "delivery": "Todas nuestras piezas son realizadas mediante **procesos artesanales e impresión manual**, por lo que cada una requiere tiempo de elaboración y cuidado.\n\nRealizamos envíos en **Medellín y el Área Metropolitana**, y a **cualquier ciudad de Colombia**.\n\nEl tiempo de entrega es de **hasta 8 días hábiles** después de confirmar la compra. Este tiempo nos permite preparar cada grabado cuidadosamente antes de enviarlo."
+  }
+]
+</script>
+
+
+  <script src="objetos.js" defer></script>
 </body>
 </html>
